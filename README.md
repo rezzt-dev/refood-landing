@@ -2,7 +2,7 @@
 
 <div align="center">
   
-  ![HTML5](https://img.shields.io/badge/HTML5-e34c26?logo=html5&logoColor=fff) ![CSS3](https://img.shields.io/badge/CSS3-264de4?logo=css3&logoColor=fff) ![JavaScript](https://img.shields.io/badge/JavaScript-f7df1e?logo=javascript&logoColor=000) ![MIT License](https://img.shields.io/badge/license-MIT-green)
+  ![HTML5](https://img.shields.io/badge/HTML5-e34c26?logo=html5&logoColor=fff) ![CSS3](https://img.shields.io/badge/CSS3-264de4?logo=css3&logoColor=fff) ![JavaScript](https://img.shields.io/badge/JavaScript-f7df1e?logo=javascript&logoColor=000) ![Non-Commercial License](https://img.shields.io/badge/license-non--commercial-orange)
 </div>
 
 ---
@@ -65,7 +65,7 @@ git clone https://github.com/tu-usuario/tu-repo.git
 
 ## Licence
 
-This project is licensed under the MIT Licence.
+This project is licensed under a custom Non-Commercial Licence. Personal, educational and evaluation use is allowed; commercial use requires the author's prior written permission. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
