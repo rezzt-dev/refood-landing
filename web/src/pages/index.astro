@@ -22,25 +22,42 @@ const examples = [
   <main id="contenido">
     <section id="inicio" class="hero relative overflow-hidden">
       <div class="hero-image" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div>
-      <div class="hero-orbit" aria-hidden="true"><span class="hero-orbit-ring"></span><span class="hero-orbit-core"><Leaf size={42} stroke-width={1.2} /></span><span class="hero-orbit-caption">APROVECHAR · COMPARTIR · DISFRUTAR ·</span></div>
       <div class="container relative z-10 flex min-h-[680px] flex-col justify-center py-24 lg:min-h-[760px]">
         <div class="max-w-[750px] text-white" data-intro>
-          <p class="hero-label"><span class="h-2 w-2 rounded-full bg-lime"></span> Una idea para aprovechar mejor</p>
-          <h1 class="mt-8 font-display text-[clamp(2.75rem,7vw,6rem)] leading-[1.03] tracking-[-0.035em]">La buena comida merece <em class="font-normal text-lime">otra oportunidad.</em></h1>
-          <p class="mt-7 max-w-[55ch] text-base leading-8 text-white/85 sm:text-lg">En re:food imaginamos una forma sencilla de conectar los excedentes de los restaurantes con personas que quieren disfrutarlos. Menos desperdicio, más sabor.</p>
-          <div class="mt-9 flex flex-wrap items-center gap-6"><a class="button button-light" href="#como-funciona">Descubre cómo funciona <ArrowRight size={18} aria-hidden="true" /></a><a class="hero-secondary" href="#proyecto">Conoce la iniciativa</a></div>
+          <p class="hero-label"><span class="h-2 w-2 rounded-full bg-lime"></span> re:food · una idea que está tomando forma</p>
+          <h1 class="mt-8 font-display text-[clamp(2.75rem,7vw,6rem)] leading-[1.03] tracking-[-0.035em]">La comida buena <em class="font-normal text-lime">no debería terminar aquí.</em></h1>
+          <p class="mt-7 max-w-[55ch] text-base leading-8 text-white/85 sm:text-lg">Imaginamos una forma de acercar la comida que sobra en los restaurantes a quienes quieren disfrutarla. Una segunda oportunidad para cada plato.</p>
+          <div class="mt-9 flex flex-wrap items-center gap-6"><a class="button button-light" href="#como-funciona">Descubre la idea <ArrowRight size={18} aria-hidden="true" /></a><a class="hero-secondary" href="#proyecto">Por qué existe</a></div>
         </div>
-        <p class="hero-footnote">Una propuesta en desarrollo · Sin reservas disponibles por ahora</p>
+        <p class="hero-footnote">Proyecto académico en desarrollo · Aún no hay reservas disponibles</p>
         <a class="hero-scroll-cue" href="#proyecto" aria-label="Desplazarse al proyecto"><span class="hero-scroll-line" aria-hidden="true"></span> Desliza para descubrir</a>
       </div>
     </section>
 
     <section id="proyecto" class="section-pad project-section bg-cream">
       <div class="container grid items-center gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-24">
-        <div data-reveal><p class="section-kicker"><span class="kicker-line"></span> El proyecto</p><h2 class="section-title mt-6">Aprovechar también es <em class="text-leaf">cuidar.</em></h2></div>
-        <div class="project-copy max-w-[55ch]" data-reveal><p class="text-lg leading-8 text-ink/80">Cada plato preparado lleva tiempo, ingredientes y trabajo. Cuando sobra comida en buen estado, aún puede tener un destino mejor que acabar en la basura.</p><p class="mt-5 leading-8 text-ink/75">re:food nace para facilitar ese encuentro: restaurantes con excedentes y personas dispuestas a darles una segunda oportunidad.</p></div>
+        <div data-reveal><p class="section-kicker"><span class="kicker-line"></span> La idea detrás de re:food</p><h2 class="section-title mt-6">Todo ese cuidado <em class="text-leaf">merece continuar.</em></h2></div>
+        <div class="project-copy max-w-[55ch]" data-reveal><p class="text-lg leading-8 text-ink/80">Detrás de un plato hay ingredientes, tiempo y manos que lo han preparado. Si sigue en buen estado, que no se venda no significa que haya perdido su valor.</p><p class="mt-5 leading-8 text-ink/75">re:food propone un encuentro sencillo entre cocinas con excedentes y personas que quieren darles una segunda oportunidad.</p></div>
       </div>
       <div class="container project-statement" aria-hidden="true">Lo bueno merece seguir.</div>
+    </section>
+
+    <section class="exchange-section" aria-labelledby="exchange-title">
+      <div class="container exchange-heading" data-reveal>
+        <p class="exchange-overline">Una idea, dos lados de la mesa</p>
+        <h2 id="exchange-title">Cuando compartimos lo que sobra, <em>ganamos todos.</em></h2>
+      </div>
+      <div class="container exchange-grid">
+        <article class="exchange-panel exchange-panel-dark" data-reveal>
+          <span class="exchange-index">Para las cocinas</span>
+          <div><UtensilsCrossed size={36} stroke-width={1.3} aria-hidden="true" /><h3>Que el trabajo de hoy llegue más lejos.</h3><p>Una forma de ofrecer la comida preparada que sigue siendo buena al final del servicio, en lugar de dejarla atrás.</p></div>
+        </article>
+        <article class="exchange-panel exchange-panel-light" data-reveal>
+          <span class="exchange-index">Para las personas</span>
+          <div><ShoppingBag size={36} stroke-width={1.3} aria-hidden="true" /><h3>Descubrir, recoger y disfrutar cerca.</h3><p>La posibilidad de encontrar un pack sorpresa en el barrio y disfrutar de comida preparada con una historia que continúa.</p></div>
+        </article>
+      </div>
+      <p class="container exchange-disclaimer">Así funcionaría la propuesta cuando exista una plataforma operativa. Actualmente no hay establecimientos ni packs disponibles.</p>
     </section>
 
     <section id="como-funciona" class="story-section bg-white" data-story>
@@ -68,7 +85,7 @@ const examples = [
           <p class="section-kicker"><span class="kicker-line"></span> Colección de restaurantes <span class="gallery-count">01 — 0{examples.length}</span></p>
           <h2 id="restaurant-title" class="section-title mt-6">Cada cocina tiene <em class="text-leaf">algo que compartir.</em></h2>
         </div>
-        <p class="gallery-intro">De la tradición al horno de leña, imaginamos una comunidad de cocinas distintas con una misma idea: dar una segunda oportunidad a la buena comida.</p>
+        <p class="gallery-intro">Las imágenes del prototipo ayudan a imaginar una comunidad de cocinas distintas. Son referencias visuales, no locales adheridos a una plataforma activa.</p>
       </div>
 
       <div class="container gallery-collection" data-gallery-track role="region" aria-label="Colección visual de restaurantes" tabindex="0">

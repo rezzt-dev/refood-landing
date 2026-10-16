@@ -6,6 +6,9 @@
 
 #### AÑADIDO
 
+- incorporar una nueva fotografía optimizada para la portada y una sección que explica la propuesta desde las cocinas y las personas.
+- añadir `web/public/images/hero-table.webp` como imagen principal orientada a la idea de compartir un plato rescatado.
+- añadir la sección de intercambio en `web/src/pages/index.astro` para explicar el valor de la propuesta para cocinas y personas.
 - añadir la base estática de `web/` con astro, tailwind, animejs y lucide.
 - documentar la instalación, el trabajo de agentes, la seguridad y la licencia en los archivos raíz.
 - incorporar `poppins` y `fraunces` como fuentes locales para la identidad tipográfica de `re:food`.
@@ -17,6 +20,11 @@
 
 #### CAMBIADO
 
+- renovar el mensaje, la composición visual y la navegación de la portada, con ajustes específicos para móvil.
+- mejorar los metadatos sociales y aclarar el carácter ilustrativo de los restaurantes del prototipo.
+- actualizar la imagen de portada, el contraste, los botones y la navegación responsive en `web/src/styles/global.css`.
+- actualizar la descripción por defecto y los metadatos `og:*` en `web/src/layouts/BaseLayout.astro`.
+- retirar el elemento orbital decorativo de la portada y simplificar su movimiento en `web/src/scripts/home-motion.ts`.
 - mantener los documentos del repositorio con nombres en minúsculas y eliminar las copias duplicadas en mayúsculas.
 - actualizar la portada provisional con una jerarquía editorial responsive, un mensaje de producto claro y tokens tipográficos reutilizables.
 - aclarar en la landing que las reservas y los restaurantes del prototipo no están disponibles actualmente.
@@ -32,6 +40,9 @@
 
 #### ADDED
 
+- add an optimized hero photograph and a section explaining the proposal for kitchens and visitors.
+- add `web/public/images/hero-table.webp` as the main image for the rescued-meal concept.
+- add the exchange section in `web/src/pages/index.astro` to explain the proposal for kitchens and visitors.
 - add the static `web/` foundation with astro, tailwind, animejs and lucide.
 - document setup, agent workflows, security and licensing in the root files.
 - add `poppins` and `fraunces` as local fonts for the `re:food` typographic identity.
@@ -43,6 +54,11 @@
 
 #### CHANGED
 
+- refresh homepage copy, visual composition and navigation, including mobile refinements.
+- improve social metadata and clarify that prototype restaurant examples are illustrative.
+- update the hero image, contrast, buttons and responsive navigation in `web/src/styles/global.css`.
+- update the default description and `og:*` metadata in `web/src/layouts/BaseLayout.astro`.
+- remove the decorative orbit from the hero and simplify its motion in `web/src/scripts/home-motion.ts`.
 - keep repository documents lowercase and remove duplicate uppercase copies.
 - update the provisional homepage with a responsive editorial hierarchy, clear product messaging and reusable typography tokens.
 - clarify on the landing that bookings and restaurants from the prototype are not currently available.

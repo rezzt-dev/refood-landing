@@ -4,7 +4,6 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const root = document.documentElement;
 const hero = document.querySelector<HTMLElement>('.hero');
 const heroImage = hero?.querySelector<HTMLElement>('.hero-image');
-const orbit = hero?.querySelector<HTMLElement>('.hero-orbit');
 const project = document.querySelector<HTMLElement>('.project-section');
 const projectStatement = project?.querySelector<HTMLElement>('.project-statement');
 const story = document.querySelector<HTMLElement>('[data-story]');
@@ -22,10 +21,9 @@ const updateScrollMotion = () => {
   const viewportHeight = window.innerHeight;
 
   if (!reducedMotion.matches) {
-    if (hero && heroImage && orbit) {
+    if (hero && heroImage) {
       const travel = Math.min(Math.max(window.scrollY, 0), hero.offsetHeight);
       heroImage.style.transform = `translate3d(0, ${travel * 0.18}px, 0) scale(1.06)`;
-      orbit.style.transform = `translate3d(0, calc(-50% - ${travel * 0.12}px), 0)`;
     }
 
     if (project && projectStatement) {
