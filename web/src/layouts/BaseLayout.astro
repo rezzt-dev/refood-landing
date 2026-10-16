@@ -22,6 +22,9 @@ const { title, description = 're:food: salvamos comida, cuidamos el planeta.' } 
     <title>{title}</title>
   </head>
   <body class="bg-cream text-ink antialiased">
+    <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
     <slot />
+    <a class="back-to-top" data-back-to-top href="#" aria-label="Volver al principio de la página" hidden>↑</a>
+    <script src="../scripts/scroll-ui.ts"></script>
   </body>
 </html>

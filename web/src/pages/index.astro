@@ -22,6 +22,7 @@ const examples = [
   <main id="contenido">
     <section id="inicio" class="hero relative overflow-hidden">
       <div class="hero-image" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-orbit" aria-hidden="true"><span class="hero-orbit-ring"></span><span class="hero-orbit-core"><Leaf size={42} stroke-width={1.2} /></span><span class="hero-orbit-caption">APROVECHAR · COMPARTIR · DISFRUTAR ·</span></div>
       <div class="container relative z-10 flex min-h-[680px] flex-col justify-center py-24 lg:min-h-[760px]">
         <div class="max-w-[750px] text-white" data-intro>
           <p class="hero-label"><span class="h-2 w-2 rounded-full bg-lime"></span> Una idea para aprovechar mejor</p>
@@ -30,59 +31,62 @@ const examples = [
           <div class="mt-9 flex flex-wrap items-center gap-6"><a class="button button-light" href="#como-funciona">Descubre cómo funciona <ArrowRight size={18} aria-hidden="true" /></a><a class="hero-secondary" href="#proyecto">Conoce la iniciativa</a></div>
         </div>
         <p class="hero-footnote">Una propuesta en desarrollo · Sin reservas disponibles por ahora</p>
+        <a class="hero-scroll-cue" href="#proyecto" aria-label="Desplazarse al proyecto"><span class="hero-scroll-line" aria-hidden="true"></span> Desliza para descubrir</a>
       </div>
     </section>
 
-    <section id="proyecto" class="section-pad bg-cream">
+    <section id="proyecto" class="section-pad project-section bg-cream">
       <div class="container grid items-center gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-24">
-        <div><p class="section-kicker"><span class="kicker-line"></span> El proyecto</p><h2 class="section-title mt-6">Aprovechar también es <em class="text-leaf">cuidar.</em></h2></div>
-        <div class="max-w-[55ch]"><p class="text-lg leading-8 text-ink/80">Cada plato preparado lleva tiempo, ingredientes y trabajo. Cuando sobra comida en buen estado, aún puede tener un destino mejor que acabar en la basura.</p><p class="mt-5 leading-8 text-ink/75">re:food nace para facilitar ese encuentro: restaurantes con excedentes y personas dispuestas a darles una segunda oportunidad.</p></div>
+        <div data-reveal><p class="section-kicker"><span class="kicker-line"></span> El proyecto</p><h2 class="section-title mt-6">Aprovechar también es <em class="text-leaf">cuidar.</em></h2></div>
+        <div class="project-copy max-w-[55ch]" data-reveal><p class="text-lg leading-8 text-ink/80">Cada plato preparado lleva tiempo, ingredientes y trabajo. Cuando sobra comida en buen estado, aún puede tener un destino mejor que acabar en la basura.</p><p class="mt-5 leading-8 text-ink/75">re:food nace para facilitar ese encuentro: restaurantes con excedentes y personas dispuestas a darles una segunda oportunidad.</p></div>
       </div>
+      <div class="container project-statement" aria-hidden="true">Lo bueno merece seguir.</div>
     </section>
 
-    <section id="como-funciona" class="section-pad bg-white">
-      <div class="container">
-        <div class="flex flex-wrap items-end justify-between gap-6"><div class="max-w-[650px]"><p class="section-kicker"><span class="kicker-line"></span> Así lo imaginamos</p><h2 class="section-title mt-6">Tres pasos. Un plato que no se pierde.</h2></div><p class="max-w-[34ch] text-sm leading-7 text-ink/70">El recorrido que estamos construyendo para aprovechar comida de principio a fin.</p></div>
-        <div class="mt-14 grid border-y border-ink/15 md:grid-cols-3">
-          {steps.map((step) => <article class="step-item py-8 md:px-8 md:py-10 first:md:pl-0 last:md:pr-0">
-            <div class="flex items-center justify-between text-leaf"><span class="font-display text-lg">{step.number}</span><step.icon size={26} stroke-width={1.7} aria-hidden="true" /></div>
-            <h3 class="mt-10 font-display text-3xl">{step.title}</h3><p class="mt-4 max-w-[34ch] leading-7 text-ink/75">{step.text}</p>
+    <section id="como-funciona" class="story-section bg-white" data-story>
+      <div class="container story-intro"><div class="max-w-[650px]" data-reveal><p class="section-kicker"><span class="kicker-line"></span> Así lo imaginamos</p><h2 class="section-title mt-6">Tres pasos. Un plato que no se pierde.</h2></div><p class="max-w-[34ch] text-sm leading-7 text-ink/70" data-reveal>Desplázate para seguir el recorrido que estamos construyendo de principio a fin.</p></div>
+      <div class="container story-layout">
+        <div class="story-visual" aria-hidden="true" data-story-visual>
+          <div class="story-visual-top"><span>El recorrido</span><span><span data-story-number>01</span> / 03</span></div>
+          <div class="story-plate"><div class="story-plate-inner"><Leaf size={52} stroke-width={1.1} /></div></div>
+          <div class="story-visual-bottom"><span class="story-visual-name" data-story-name>Explora</span><span class="story-visual-arrow">↗</span></div>
+          <div class="story-visual-progress"><span></span></div>
+        </div>
+        <div class="story-steps">
+          {steps.map((step) => <article class="story-step" data-story-step data-number={step.number} data-title={step.title}>
+            <div class="story-step-index"><span>{step.number} / 03</span><step.icon size={30} stroke-width={1.5} aria-hidden="true" /></div>
+            <h3>{step.title}</h3><p>{step.text}</p>
           </article>)}
         </div>
-        <p class="mt-6 text-sm text-ink/70">Este recorrido describe la propuesta del proyecto; la plataforma todavía está en desarrollo.</p>
       </div>
+      <p class="container story-note">Este recorrido describe la propuesta del proyecto; la plataforma todavía está en desarrollo.</p>
     </section>
 
-    <section id="restaurantes" class="section-pad bg-mist">
-      <div class="container">
-        <div class="max-w-[760px]"><p class="section-kicker"><span class="kicker-line"></span> Restaurantes</p><h2 class="section-title mt-6">Una idea que empieza en las cocinas.</h2><p class="mt-6 max-w-[60ch] text-lg leading-8 text-ink/75">Los restaurantes son parte esencial de la propuesta: convertir sus excedentes en packs sorpresa para que más comida encuentre quien la disfrute.</p></div>
-        <div class="mt-12 grid gap-7 md:grid-cols-3">
-          {examples.map((example) => <figure class="restaurant-tile"><img src={example.image} alt={example.name} loading="lazy" decoding="async" width="480" height="360" /><figcaption class="px-1 pt-5"><h3 class="font-display text-xl">{example.name}</h3><p class="mt-1 text-sm text-ink/70">{example.description}</p></figcaption></figure>)}
+    <section id="restaurantes" class="restaurant-section bg-mist" data-gallery>
+      <div class="gallery-stage" data-gallery-stage>
+        <div class="container gallery-heading" data-reveal><div><p class="section-kicker"><span class="kicker-line"></span> Restaurantes</p><h2 class="section-title mt-6">Una idea que empieza <em class="text-leaf">en las cocinas.</em></h2></div><p class="max-w-[40ch] text-sm leading-7 text-ink/75">Los restaurantes son parte esencial de la propuesta: convertir sus excedentes en packs sorpresa para que más comida encuentre quien la disfrute.</p></div>
+        <div class="gallery-track" data-gallery-track tabindex="0" role="region" aria-label="Galería de ejemplos visuales de restaurantes">
+          {examples.map((example, index) => <figure class="restaurant-tile" data-reveal><div class="restaurant-image-wrap"><img src={example.image} alt={example.name} loading="lazy" decoding="async" width="480" height="360" /></div><figcaption><span class="restaurant-number">0{index + 1} / 03</span><div><h3>{example.name}</h3><p>{example.description}</p></div></figcaption></figure>)}
         </div>
-        <p class="mt-8 max-w-[75ch] text-xs leading-6 text-ink/70">Imágenes y nombres conservados del prototipo original como ejemplos visuales. No indican que estos locales participen actualmente ni que haya packs disponibles.</p>
+        <div class="container gallery-bottom"><div class="gallery-progress" aria-hidden="true"><span data-gallery-progress></span></div><p>Referencias visuales del prototipo original. Estos locales no participan actualmente y no hay packs disponibles.</p></div>
       </div>
     </section>
 
-    <section id="impacto" class="section-pad bg-forest text-white">
-      <div class="container grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-24">
-        <div><p class="section-kicker text-lime"><span class="kicker-line bg-lime"></span> Nuestro propósito</p><h2 class="section-title mt-6">Pequeñas decisiones, <em class="text-lime">un cambio compartido.</em></h2></div>
-        <div class="divide-y divide-white/20">
-          <div class="flex gap-5 py-5 first:pt-0"><UtensilsCrossed class="mt-1 shrink-0 text-lime" size={25} aria-hidden="true" /><div><h3 class="font-display text-2xl">Dar valor a cada plato</h3><p class="mt-2 leading-7 text-white/75">Aprovechar comida preparada que sigue teniendo mucho que ofrecer.</p></div></div>
-          <div class="flex gap-5 py-5"><Leaf class="mt-1 shrink-0 text-lime" size={25} aria-hidden="true" /><div><h3 class="font-display text-2xl">Reducir el desperdicio</h3><p class="mt-2 leading-7 text-white/75">Impulsar hábitos más responsables en nuestro día a día.</p></div></div>
-          <div class="flex gap-5 py-5 last:pb-0"><MapPin class="mt-1 shrink-0 text-lime" size={25} aria-hidden="true" /><div><h3 class="font-display text-2xl">Conectar el barrio</h3><p class="mt-2 leading-7 text-white/75">Acercar las cocinas locales a las personas de su entorno.</p></div></div>
+    <section id="impacto" class="purpose-section bg-forest text-white" data-purpose>
+      <div class="container purpose-layout">
+        <div class="purpose-heading" data-reveal><p class="section-kicker text-lime"><span class="kicker-line bg-lime"></span> Nuestro propósito</p><h2 class="section-title mt-6">Pequeñas decisiones, <em class="text-lime">un cambio compartido.</em></h2><span class="purpose-heading-mark" aria-hidden="true">re:food / 03</span></div>
+        <div class="purpose-list">
+          <article class="purpose-item" data-reveal><span class="purpose-index">01</span><UtensilsCrossed class="purpose-icon" size={30} stroke-width={1.5} aria-hidden="true" /><div><h3>Dar valor a cada plato</h3><p>Aprovechar comida preparada que sigue teniendo mucho que ofrecer.</p></div></article>
+          <article class="purpose-item" data-reveal><span class="purpose-index">02</span><Leaf class="purpose-icon" size={30} stroke-width={1.5} aria-hidden="true" /><div><h3>Reducir el desperdicio</h3><p>Impulsar hábitos más responsables en nuestro día a día.</p></div></article>
+          <article class="purpose-item" data-reveal><span class="purpose-index">03</span><MapPin class="purpose-icon" size={30} stroke-width={1.5} aria-hidden="true" /><div><h3>Conectar el barrio</h3><p>Acercar las cocinas locales a las personas de su entorno.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="bg-lime py-20 sm:py-24"><div class="container flex flex-wrap items-end justify-between gap-9"><div class="max-w-[730px]"><h2 class="section-title text-forest">Hagamos sitio para una nueva forma de aprovechar.</h2><p class="mt-6 max-w-[60ch] leading-8 text-forest/85">re:food está tomando forma. Mientras llega la experiencia completa, descubre la idea y compártela con quien también crea que la comida merece una segunda oportunidad.</p></div><a class="button button-dark" href="#inicio">Volver al inicio <ArrowUpRight size={18} aria-hidden="true" /></a></div></section>
+    <section class="closing-section bg-lime py-20 sm:py-24"><div class="container flex flex-wrap items-end justify-between gap-9"><div class="max-w-[730px]" data-reveal><h2 class="section-title text-forest">Hagamos sitio para una nueva forma de aprovechar.</h2><p class="mt-6 max-w-[60ch] leading-8 text-forest/85">re:food está tomando forma. Mientras llega la experiencia completa, descubre la idea y compártela con quien también crea que la comida merece una segunda oportunidad.</p></div><a class="button button-dark" href="#inicio">Volver al inicio <ArrowUpRight size={18} aria-hidden="true" /></a></div></section>
   </main>
 
   <SiteFooter />
 
-  <script>
-    import { animate } from 'animejs';
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      animate('[data-intro]', { opacity: [0, 1], translateY: [16, 0], duration: 700, ease: 'outCubic' });
-    }
-  </script>
+  <script src="../scripts/home-motion.ts"></script>
 </BaseLayout>
