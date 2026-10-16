@@ -1,5 +1,5 @@
 ---
-import { ArrowRight, ArrowUpRight, Check, Leaf, MapPin, Search, ShoppingBag, UtensilsCrossed } from '@lucide/astro';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Leaf, MapPin, Search, ShoppingBag, UtensilsCrossed } from '@lucide/astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -10,9 +10,9 @@ const steps = [
   { number: '03', title: 'Disfruta', text: 'Recoge tu pedido, disfruta de buena comida y ayuda a reducir el desperdicio.', icon: Check },
 ];
 const examples = [
-  { name: 'Orosia', description: 'Tapas y opciones vegetales', image: '/images/restaurante-orosia.webp' },
-  { name: 'Mesón Restaurante Octavio', description: 'Cocina tradicional manchega', image: '/images/restaurante-octiavia.webp' },
-  { name: 'Asador San Huberto', description: 'Especialidades al horno de leña', image: '/images/restaurante-san-huberto.webp' },
+  { name: 'Asador San Huberto', category: 'Asador', description: 'Especialidades al horno de leña', image: '/images/restaurante-san-huberto.webp', imageAlt: 'Fachada del Asador San Huberto', imageWidth: 1200, imageHeight: 900, logo: false },
+  { name: 'Mesón Restaurante Octavio', category: 'Cocina tradicional', description: 'Cocina tradicional manchega', image: '/images/restaurante-octiavia.webp', imageAlt: 'Fachada del Mesón Restaurante Octavio', imageWidth: 1440, imageHeight: 1080, logo: false },
+  { name: 'Orosia', category: 'Tapas y vegetal', description: 'Tapas y opciones vegetales', image: '/images/restaurante-orosia.webp', imageAlt: 'Logotipo de Orosia', imageWidth: 960, imageHeight: 720, logo: true },
 ];
 ---
 
@@ -62,13 +62,36 @@ const examples = [
       <p class="container story-note">Este recorrido describe la propuesta del proyecto; la plataforma todavía está en desarrollo.</p>
     </section>
 
-    <section id="restaurantes" class="restaurant-section bg-mist" data-gallery>
-      <div class="gallery-stage" data-gallery-stage>
-        <div class="container gallery-heading" data-reveal><div><p class="section-kicker"><span class="kicker-line"></span> Restaurantes</p><h2 class="section-title mt-6">Una idea que empieza <em class="text-leaf">en las cocinas.</em></h2></div><p class="max-w-[40ch] text-sm leading-7 text-ink/75">Los restaurantes son parte esencial de la propuesta: convertir sus excedentes en packs sorpresa para que más comida encuentre quien la disfrute.</p></div>
-        <div class="gallery-track" data-gallery-track tabindex="0" role="region" aria-label="Galería de ejemplos visuales de restaurantes">
-          {examples.map((example, index) => <figure class="restaurant-tile" data-reveal><div class="restaurant-image-wrap"><img src={example.image} alt={example.name} loading="lazy" decoding="async" width="480" height="360" /></div><figcaption><span class="restaurant-number">0{index + 1} / 03</span><div><h3>{example.name}</h3><p>{example.description}</p></div></figcaption></figure>)}
+    <section id="restaurantes" class="restaurant-section bg-mist" aria-labelledby="restaurant-title" data-gallery>
+      <div class="container gallery-heading" data-reveal>
+        <div>
+          <p class="section-kicker"><span class="kicker-line"></span> Colección de restaurantes <span class="gallery-count">01 — 0{examples.length}</span></p>
+          <h2 id="restaurant-title" class="section-title mt-6">Cada cocina tiene <em class="text-leaf">algo que compartir.</em></h2>
         </div>
-        <div class="container gallery-bottom"><div class="gallery-progress" aria-hidden="true"><span data-gallery-progress></span></div><p>Referencias visuales del prototipo original. Estos locales no participan actualmente y no hay packs disponibles.</p></div>
+        <p class="gallery-intro">De la tradición al horno de leña, imaginamos una comunidad de cocinas distintas con una misma idea: dar una segunda oportunidad a la buena comida.</p>
+      </div>
+
+      <div class="container gallery-collection" data-gallery-track role="region" aria-label="Colección visual de restaurantes" tabindex="0">
+        {examples.map((example, index) => <article class:list={['restaurant-card', { 'restaurant-card-featured': index === 0, 'restaurant-card-logo': example.logo }]} data-gallery-card data-reveal>
+          <div class="restaurant-image-wrap">
+            <img src={example.image} alt={example.imageAlt} loading="lazy" decoding="async" width={example.imageWidth} height={example.imageHeight} />
+            <span class="restaurant-image-index" aria-hidden="true">0{index + 1} / 0{examples.length}</span>
+          </div>
+          <div class="restaurant-card-body">
+            <span class="restaurant-category"><span aria-hidden="true"></span>{example.category}</span>
+            <div class="restaurant-card-copy"><h3>{example.name}</h3><p>{example.description}</p></div>
+            <span class="restaurant-card-mark" aria-hidden="true"><Leaf size={21} stroke-width={1.5} /></span>
+          </div>
+        </article>)}
+      </div>
+
+      <div class="container gallery-bottom">
+        <p><strong>Una colección para imaginar lo que viene.</strong> Referencias visuales del prototipo original: estos locales no participan actualmente y no hay packs disponibles.</p>
+        <div class="gallery-controls" data-gallery-controls role="group" aria-label="Controles de la colección">
+          <span class="gallery-current" aria-live="polite"><span data-gallery-current>01</span> <span aria-hidden="true">/</span> 0{examples.length}</span>
+          <button type="button" class="gallery-control" data-gallery-prev aria-label="Ver restaurante anterior" disabled><ArrowLeft size={20} aria-hidden="true" /></button>
+          <button type="button" class="gallery-control" data-gallery-next aria-label="Ver siguiente restaurante"><ArrowRight size={20} aria-hidden="true" /></button>
+        </div>
       </div>
     </section>
 
@@ -89,4 +112,5 @@ const examples = [
   <SiteFooter />
 
   <script src="../scripts/home-motion.ts"></script>
+  <script src="../scripts/restaurant-gallery.ts"></script>
 </BaseLayout>

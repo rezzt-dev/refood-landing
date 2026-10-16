@@ -13,6 +13,7 @@
 - incorporar las imágenes de la landing en `web/public/images/` y optimizarlas en formato `webp`.
 - crear las páginas de aviso legal, privacidad y cookies acordes con el estado académico y estático del proyecto.
 - añadir progreso de lectura, navegación contextual y retorno al inicio en todas las páginas.
+- añadir controles accesibles y contador de posición para recorrer la colección de restaurantes en dispositivos táctiles.
 
 #### CAMBIADO
 
@@ -24,6 +25,8 @@
 - actualizar `readme.md` para documentar las páginas legales y aclarar que `re:food` es una propuesta académica sin empresa constituida.
 - convertir los pasos en una secuencia narrativa fija, desplazar la galería con el scroll y diferenciar las secciones con movimiento adaptado a cada dispositivo.
 - mantener la galería navegable con teclado y gestos táctiles, y conservar una composición estática cuando el movimiento reducido o el viewport no permiten el efecto de scroll.
+- rediseñar la galería de restaurantes como una colección editorial con una ficha destacada, tarjetas secundarias, categorías y estados visuales coherentes.
+- separar la lógica de navegación de la galería en `web/src/scripts/restaurant-gallery.ts` y mantener el movimiento general de la portada en `web/src/scripts/home-motion.ts`.
 
 ### ENGLISH
 
@@ -36,6 +39,7 @@
 - add the landing images to `web/public/images/` and optimize them as `webp` assets.
 - add legal notice, privacy and cookie pages reflecting the academic, static nature of the project.
 - add reading progress, contextual navigation and a return-to-top control across all pages.
+- add accessible controls and a position counter for browsing the restaurant collection on touch devices.
 
 #### CHANGED
 
@@ -47,3 +51,5 @@
 - update `readme.md` to document the legal pages and clarify that `re:food` is an academic proposal with no incorporated company.
 - turn the steps into a pinned story, move the gallery with scrolling, and give each section responsive, reduced-motion-aware movement.
 - keep the gallery keyboard and touch navigable, and preserve a static composition when reduced motion or the viewport prevents the scroll effect.
+- redesign the restaurant gallery as an editorial collection with a featured card, secondary cards, categories and consistent visual states.
+- separate gallery navigation logic into `web/src/scripts/restaurant-gallery.ts` and keep the homepage motion system in `web/src/scripts/home-motion.ts`.

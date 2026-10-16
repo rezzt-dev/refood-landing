@@ -90,23 +90,43 @@ section[id] { scroll-margin-top: 100px; }
 .story-step svg { transition: transform .4s ease; }
 .story-step.is-active svg { transform: rotate(-10deg) scale(1.15); }
 .story-note { margin-top: 2rem; color: rgba(23,49,45,.7); font-size: .8rem; line-height: 1.8; }
-.restaurant-section { position: relative; }
-.gallery-stage { padding-block: clamp(5rem, 8vw, 8rem); overflow: hidden; }
-.gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
-.gallery-heading h2 { max-width: 16ch; }
-.gallery-track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); width: min(100% - 2.5rem, 1200px); margin: 3rem auto 0; }
-.restaurant-tile { min-width: 0; }
-.restaurant-image-wrap { overflow: hidden; background: var(--color-forest); }
-.restaurant-tile img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .65s cubic-bezier(.22,1,.36,1), opacity .5s ease; }
-.restaurant-tile:hover img { transform: scale(1.06); opacity: .9; }
-.restaurant-tile figcaption { display: flex; align-items: start; gap: 1.25rem; padding-top: 1.15rem; }
-.restaurant-number { flex: none; padding-top: .4rem; color: var(--color-leaf); font-size: .68rem; font-weight: 600; letter-spacing: .12em; }
-.restaurant-tile h3 { font-family: var(--font-display); font-size: clamp(1.3rem, 2vw, 2rem); line-height: 1.2; }
-.restaurant-tile figcaption p { margin-top: .3rem; color: rgba(23,49,45,.72); font-size: .8rem; line-height: 1.6; }
-.gallery-bottom { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 3rem; }
-.gallery-bottom p { max-width: 65ch; color: rgba(23,49,45,.7); font-size: .75rem; line-height: 1.7; }
-.gallery-progress { width: min(23vw, 230px); height: 2px; flex: none; background: rgba(23,49,45,.18); }
-.gallery-progress span { display: block; width: 100%; height: 100%; background: var(--color-leaf); transform: scaleX(var(--gallery-progress, 0)); transform-origin: left; }
+.restaurant-section { padding-block: clamp(5rem, 8vw, 8rem); overflow: hidden; }
+.gallery-heading { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .7fr); align-items: end; gap: clamp(2rem, 6vw, 7rem); }
+.gallery-heading h2 { max-width: 15ch; }
+.gallery-count { margin-left: .5rem; color: var(--color-leaf); font-size: .7rem; letter-spacing: .12em; white-space: nowrap; }
+.gallery-intro { max-width: 36ch; padding-bottom: .35rem; color: rgba(23,49,45,.76); font-size: .93rem; line-height: 1.9; }
+.gallery-collection { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 2rem); margin-top: clamp(2.5rem, 5vw, 4.5rem); }
+.restaurant-card { min-width: 0; overflow: hidden; background: var(--color-cream); }
+.restaurant-card:not(.restaurant-card-featured) { display: flex; flex-direction: column; }
+.restaurant-card-featured { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, 1.28fr) minmax(0, .72fr); min-height: 440px; background: var(--color-forest); color: white; }
+.restaurant-image-wrap { position: relative; overflow: hidden; background: #dce5d7; }
+.restaurant-card:not(.restaurant-card-featured) .restaurant-image-wrap { aspect-ratio: 1.5 / 1; }
+.restaurant-card img { display: block; width: 100%; height: 100%; aspect-ratio: 1.5 / 1; object-fit: cover; transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.restaurant-card:hover img { transform: scale(1.035); }
+.restaurant-card-featured img { aspect-ratio: auto; }
+.restaurant-card-logo .restaurant-image-wrap { display: grid; place-items: center; background: #fff; }
+.restaurant-card-logo img { width: min(82%, 410px); height: 82%; aspect-ratio: auto; object-fit: contain; }
+.restaurant-image-index { position: absolute; left: 1.25rem; bottom: 1.25rem; padding: .55rem .75rem; background: rgba(247,245,237,.96); color: var(--color-forest); font-size: .68rem; font-weight: 600; letter-spacing: .15em; }
+.restaurant-card-body { display: flex; flex: 1; flex-direction: column; min-height: 205px; padding: clamp(1.4rem, 3vw, 2.5rem); }
+.restaurant-card-featured .restaurant-card-body { padding: clamp(2rem, 4vw, 4rem); }
+.restaurant-category { display: inline-flex; align-items: center; gap: .65rem; color: var(--color-leaf); font-size: .69rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
+.restaurant-category span { width: .4rem; height: .4rem; border-radius: 50%; background: currentColor; }
+.restaurant-card-featured .restaurant-category { color: var(--color-lime); }
+.restaurant-card-copy { margin-top: auto; padding-top: 2rem; }
+.restaurant-card h3 { max-width: 22ch; font-family: var(--font-display); font-size: clamp(1.75rem, 2.6vw, 2.5rem); line-height: 1.17; letter-spacing: -.02em; }
+.restaurant-card-featured h3 { font-size: clamp(2.5rem, 4vw, 4.2rem); }
+.restaurant-card p { margin-top: .65rem; color: rgba(23,49,45,.7); font-size: .82rem; line-height: 1.7; }
+.restaurant-card-featured p { color: rgba(255,255,255,.78); }
+.restaurant-card-mark { align-self: flex-end; display: grid; place-items: center; width: 2.8rem; height: 2.8rem; margin-top: 1.5rem; border: 1px solid rgba(37,123,90,.3); border-radius: 50%; color: var(--color-leaf); }
+.restaurant-card-featured .restaurant-card-mark { border-color: rgba(216,235,155,.45); color: var(--color-lime); }
+.gallery-bottom { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(23,49,45,.18); }
+.gallery-bottom p { max-width: 75ch; color: rgba(23,49,45,.68); font-size: .76rem; line-height: 1.8; }
+.gallery-bottom strong { color: var(--color-forest); font-weight: 600; }
+.gallery-controls { display: none; align-items: center; gap: .5rem; }
+.gallery-current { margin-right: .7rem; color: var(--color-forest); font-size: .75rem; font-weight: 600; white-space: nowrap; }
+.gallery-control { display: grid; place-items: center; width: 2.9rem; height: 2.9rem; border: 1px solid var(--color-forest); border-radius: 50%; background: transparent; color: var(--color-forest); cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+.gallery-control:hover:not(:disabled) { background: var(--color-forest); color: white; }
+.gallery-control:disabled { border-color: rgba(23,49,45,.25); color: rgba(23,49,45,.3); cursor: not-allowed; }
 .purpose-section { position: relative; overflow: clip; }
 .purpose-section::before { content: ''; position: absolute; width: 60vw; aspect-ratio: 1; right: -25vw; top: 12%; border: 1px solid rgba(216,235,155,.12); border-radius: 50%; box-shadow: 0 0 0 8vw rgba(216,235,155,.015), 0 0 0 16vw rgba(216,235,155,.01); transform: translate3d(0,var(--purpose-shift,0px),0); pointer-events: none; }
 .purpose-layout { position: relative; display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(3rem, 7vw, 8rem); }
@@ -123,13 +143,6 @@ section[id] { scroll-margin-top: 100px; }
 .purpose-item.is-active .purpose-icon { transform: rotate(-8deg) scale(1.12); }
 .purpose-item p { max-width: 40ch; margin-top: 1rem; color: rgba(255,255,255,.78); line-height: 1.8; }
 .purpose-item:first-child { border-top: 1px solid rgba(255,255,255,.24); }
-.scroll-enhanced .restaurant-section { height: 260svh; }
-.scroll-enhanced .gallery-stage { position: sticky; top: 80px; display: flex; flex-direction: column; justify-content: space-between; height: calc(100svh - 80px); min-height: 620px; padding-block: clamp(2rem, 4vh, 3.5rem); }
-.scroll-enhanced .gallery-heading h2 { font-size: clamp(2.7rem, 4vw, 4.3rem); }
-.scroll-enhanced .gallery-track { display: flex; flex: none; width: max-content; gap: 1.5rem; margin: 0 0 0 max(1.25rem, calc((100vw - 1200px)/2)); will-change: transform; }
-.scroll-enhanced .restaurant-tile { width: clamp(420px, 52vw, 700px); flex: none; }
-.scroll-enhanced .restaurant-tile img { aspect-ratio: 2.25 / 1; }
-.scroll-enhanced .gallery-bottom { margin-top: 0; }
 .closing-section { position: relative; overflow: hidden; }
 .closing-section::before { content: ''; position: absolute; width: min(55vw, 650px); aspect-ratio: 1; right: -12%; top: -125%; border: 1px solid rgba(23,63,52,.23); border-radius: 50%; box-shadow: 0 0 0 80px rgba(23,63,52,.035), 0 0 0 160px rgba(23,63,52,.025); pointer-events: none; }
 .closing-section .container { position: relative; }
@@ -167,12 +180,16 @@ section[id] { scroll-margin-top: 100px; }
   .story-plate { width: 180px; }
   .story-visual-name { font-size: 3rem; }
   .story-step { min-height: 330px; }
-  .gallery-heading { display: block; }
-  .gallery-heading p:last-child { margin-top: 1.5rem; }
-  .gallery-track { display: flex; width: auto; gap: 1rem; margin: 2.5rem 0 0; padding-inline: max(1.25rem, calc((100vw - 1200px)/2)); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--color-leaf) transparent; }
-  .restaurant-tile { flex: 0 0 min(80vw, 450px); scroll-snap-align: center; }
-  .gallery-bottom { display: block; }
-  .gallery-progress { width: 100%; margin-bottom: 1.25rem; }
+  .gallery-heading { grid-template-columns: 1fr; gap: 1.4rem; }
+  .gallery-intro { max-width: 62ch; }
+  .gallery-collection { display: flex; width: auto; gap: 1rem; margin-top: 2.5rem; padding-inline: max(1.25rem, calc((100vw - 1200px)/2)); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 1.25rem; scrollbar-width: thin; scrollbar-color: var(--color-leaf) transparent; }
+  .restaurant-card, .restaurant-card-featured { display: flex; flex: 0 0 min(75vw, 490px); flex-direction: column; min-height: 0; scroll-snap-align: start; }
+  .restaurant-card .restaurant-image-wrap, .restaurant-card:not(.restaurant-card-featured) .restaurant-image-wrap { aspect-ratio: 1.35 / 1; }
+  .restaurant-card img, .restaurant-card-featured img { height: 100%; aspect-ratio: auto; }
+  .restaurant-card-logo img { width: 82%; height: 82%; }
+  .restaurant-card-body, .restaurant-card-featured .restaurant-card-body { flex: 1; min-height: 225px; padding: 1.5rem; }
+  .restaurant-card-featured h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .gallery-controls.is-ready { display: flex; }
   .purpose-heading { position: relative; top: auto; padding: 6rem 0 2rem; }
   .purpose-heading-mark { margin-top: 2rem; }
   .purpose-item { min-height: 340px; }
@@ -180,6 +197,7 @@ section[id] { scroll-margin-top: 100px; }
 }
 @media (max-width: 640px) {
   .container { width: min(100% - 2rem, 1200px); }
+  .gallery-count { display: none; }
   section[id] { scroll-margin-top: 128px; }
   .hero-shade { background: linear-gradient(90deg, rgba(15,37,30,.93), rgba(15,37,30,.66)); }
   .hero-footnote { left: 1rem; right: 1rem; }
@@ -195,9 +213,9 @@ section[id] { scroll-margin-top: 100px; }
   .story-plate-inner svg { width: 32px; }
   .story-step { min-height: 300px; padding-left: 1.5rem; }
   .story-step h3 { font-size: 3.7rem; }
-  .gallery-stage { padding-block: 5rem; }
-  .restaurant-tile { flex-basis: min(83vw, 360px); }
-  .restaurant-tile figcaption { gap: .8rem; }
+  .restaurant-card, .restaurant-card-featured { flex-basis: min(84vw, 360px); }
+  .gallery-bottom { align-items: start; flex-direction: column-reverse; gap: 1.25rem; }
+  .gallery-controls { align-self: flex-end; }
   .purpose-heading { padding-top: 5rem; }
   .purpose-item { grid-template-columns: 2.5rem 1fr; gap: .75rem; min-height: 300px; }
   .purpose-item h3 { font-size: 2.25rem; }
