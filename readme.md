@@ -4,7 +4,7 @@ re:food es un proyecto web para reducir el desperdicio alimentario. la visión d
 
 ## ESTADO ACTUAL
 
-la aplicación nueva vive en `web/` y genera un sitio estático con una página provisional. la implementación anterior se conserva en `.docs/old-project/` como referencia de contenido y recursos; no se publica desde la nueva aplicación. no hay una dirección de producción anunciada ni una versión de producto estable.
+la aplicación nueva vive en `web/` y genera una landing estática que presenta el propósito del proyecto, el recorrido previsto de descubrimiento, reserva y recogida, y referencias visuales del prototipo anterior. la implementación anterior se conserva en `.docs/old-project/` como referencia; no se publica desde la nueva aplicación. la landing no ofrece reservas, datos actuales de restaurantes ni cuentas de usuario. no hay una dirección de producción anunciada ni una versión de producto estable.
 
 ## TECNOLOGIAS
 
@@ -49,7 +49,7 @@ para comprobar una entrega, ejecuta `npm run check` y `npm run build` antes de `
 │   ├── old-project/      # sitio anterior, solo de referencia
 │   └── skills/           # habilidades locales para agentes de ia
 ├── web/
-│   ├── public/           # recursos públicos
+│   ├── public/           # recursos públicos e imágenes de la landing
 │   ├── src/
 │   │   ├── layouts/      # estructura html compartida
 │   │   ├── pages/        # rutas del sitio

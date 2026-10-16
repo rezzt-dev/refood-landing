@@ -2,18 +2,57 @@
 
 @theme {
   --color-ink: #17312d;
+  --color-forest: #173f34;
   --color-leaf: #257b5a;
+  --color-lime: #d8eb9b;
   --color-cream: #f7f5ed;
+  --color-mist: #eaf0e8;
   --font-sans: 'Poppins', 'Trebuchet MS', sans-serif;
   --font-display: 'Fraunces Variable', Georgia, serif;
 }
-
-:root {
-  color-scheme: light;
+:root { color-scheme: light; scroll-behavior: smooth; }
+body { min-width: 320px; font-family: var(--font-sans); font-kerning: normal; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+:focus-visible { outline: 3px solid #78b55c; outline-offset: 4px; }
+section[id] { scroll-margin-top: 100px; }
+.container { width: min(100% - 2.5rem, 1200px); margin-inline: auto; }
+.section-pad { padding-block: clamp(5rem, 9vw, 8.5rem); }
+.section-title { font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4.9rem); line-height: 1.12; letter-spacing: -.03em; }
+.section-kicker { display: flex; align-items: center; gap: .85rem; font-size: .875rem; font-weight: 600; }
+.kicker-line { width: 2rem; height: 2px; background: var(--color-leaf); }
+.skip-link { position: fixed; top: .5rem; left: .5rem; z-index: 50; transform: translateY(-150%); padding: .7rem 1rem; background: white; color: var(--color-ink); }
+.skip-link:focus { transform: translateY(0); }
+.site-header { position: relative; z-index: 20; background: var(--color-cream); }
+.brand { display: inline-flex; align-items: center; gap: .15rem; font-size: 1.65rem; font-weight: 600; line-height: 1; letter-spacing: -.045em; text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; margin-right: .5rem; border-radius: 50%; background: var(--color-forest); color: var(--color-lime); }
+.nav-link { color: var(--color-ink); font-size: .86rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+.nav-link:hover { color: var(--color-leaf); }
+.header-link { display: inline-flex; align-items: center; gap: .35rem; color: var(--color-forest); font-size: .82rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-block: .35rem; white-space: nowrap; }
+.header-link:hover, .footer-link:hover { opacity: .7; }
+.hero-image, .hero-shade { position: absolute; inset: 0; }
+.hero-image { background: url('/images/hero-food.webp') center 49% / cover no-repeat; }
+.hero-shade { background: linear-gradient(90deg, rgba(15, 37, 30, .94), rgba(15, 37, 30, .80) 47%, rgba(15, 37, 30, .28)); }
+.hero-label { display: inline-flex; align-items: center; gap: .65rem; padding: .65rem .9rem; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; color: white; font-size: .74rem; font-weight: 600; }
+.hero-footnote { position: absolute; bottom: 2rem; left: 1.25rem; color: rgba(255,255,255,.8); font-size: .72rem; }
+.hero-secondary { color: white; font-size: .84rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.6); padding-block: .65rem; }
+.hero-secondary:hover { border-color: white; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: .75rem; min-height: 3.4rem; padding: .75rem 1.3rem; border-radius: .3rem; font-size: .84rem; font-weight: 600; text-decoration: none; transition: transform .2s ease, background-color .2s ease; }
+.button:hover { transform: translateY(-2px); }
+.button-light { background: var(--color-lime); color: var(--color-forest); }
+.button-light:hover { background: #e8f4bb; }
+.button-dark { background: var(--color-forest); color: white; }
+.button-dark:hover { background: var(--color-ink); }
+.step-item + .step-item { border-top: 1px solid rgba(23,49,45,.15); }
+.restaurant-tile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .4rem; }
+.footer-link { color: white; text-decoration: none; transition: opacity .2s ease; }
+@media (min-width: 768px) { .step-item + .step-item { border-top: 0; border-left: 1px solid rgba(23,49,45,.15); } }
+@media (max-width: 640px) {
+  .container { width: min(100% - 2rem, 1200px); }
+  .hero-shade { background: linear-gradient(90deg, rgba(15,37,30,.93), rgba(15,37,30,.66)); }
+  .hero-footnote { left: 1rem; right: 1rem; }
 }
-
-body {
-  min-width: 320px;
-  font-family: var(--font-sans);
-  font-kerning: normal;
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }

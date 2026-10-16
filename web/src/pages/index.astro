@@ -1,32 +1,101 @@
 ---
-import { Leaf } from '@lucide/astro';
+import { ArrowRight, ArrowUpRight, Check, Leaf, MapPin, Search, ShoppingBag, UtensilsCrossed } from '@lucide/astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const steps = [
+  { number: '01', title: 'Explora', text: 'Descubre restaurantes cercanos con comida preparada para aprovechar.', icon: Search },
+  { number: '02', title: 'Reserva', text: 'Elige un pack sorpresa y confirma cuándo pasarás a recogerlo.', icon: ShoppingBag },
+  { number: '03', title: 'Disfruta', text: 'Recoge tu pedido, disfruta de buena comida y ayuda a reducir el desperdicio.', icon: Check },
+];
+const examples = [
+  { name: 'Orosia', description: 'Tapas y opciones vegetales', image: '/images/restaurante-orosia.webp' },
+  { name: 'Mesón Restaurante Octavio', description: 'Cocina tradicional manchega', image: '/images/restaurante-octiavia.webp' },
+  { name: 'Asador San Huberto', description: 'Especialidades al horno de leña', image: '/images/restaurante-san-huberto.webp' },
+];
 ---
 
-<BaseLayout title="re:food — proyecto en preparación">
-  <main class="grid min-h-screen place-items-center px-6 py-16">
-    <div class="max-w-2xl text-center" data-intro>
-      <Leaf class="mx-auto mb-6 text-leaf" size={40} stroke-width={1.5} aria-hidden="true" />
-      <p class="text-xl font-semibold tracking-[-0.02em] sm:text-2xl">re:food</p>
-      <h1 class="mt-6 font-display text-[clamp(2.75rem,7vw,5rem)] font-medium leading-[1.08] tracking-[-0.025em] text-balance">
-        Una segunda oportunidad para cada plato.
-      </h1>
-      <p class="mx-auto mt-7 max-w-[42ch] text-base leading-relaxed text-ink/75 sm:text-lg">
-        Un proyecto en preparación para aprovechar mejor la comida.
-      </p>
+<BaseLayout title="re:food — Una segunda oportunidad para cada plato" description="Conoce re:food, una propuesta para conectar comida excedente de restaurantes con personas que quieren aprovecharla.">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container flex min-h-20 items-center justify-between gap-5">
+      <a class="brand" href="#inicio" aria-label="re:food, ir al inicio"><span class="brand-mark"><Leaf size={21} aria-hidden="true" /></span>re<span class="text-leaf">:</span>food</a>
+      <nav aria-label="Navegación principal" class="hidden items-center gap-8 md:flex">
+        <a class="nav-link" href="#como-funciona">Cómo funciona</a><a class="nav-link" href="#restaurantes">Restaurantes</a><a class="nav-link" href="#impacto">Propósito</a>
+      </nav>
+      <a class="header-link" href="#proyecto">El proyecto <ArrowUpRight size={17} aria-hidden="true" /></a>
     </div>
+    <nav aria-label="Navegación móvil" class="container flex gap-6 overflow-x-auto pb-3 md:hidden">
+      <a class="nav-link whitespace-nowrap" href="#como-funciona">Cómo funciona</a><a class="nav-link whitespace-nowrap" href="#restaurantes">Restaurantes</a><a class="nav-link whitespace-nowrap" href="#impacto">Propósito</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="hero relative overflow-hidden">
+      <div class="hero-image" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div>
+      <div class="container relative z-10 flex min-h-[680px] flex-col justify-center py-24 lg:min-h-[760px]">
+        <div class="max-w-[750px] text-white" data-intro>
+          <p class="hero-label"><span class="h-2 w-2 rounded-full bg-lime"></span> Una idea para aprovechar mejor</p>
+          <h1 class="mt-8 font-display text-[clamp(2.75rem,7vw,6rem)] leading-[1.03] tracking-[-0.035em]">La buena comida merece <em class="font-normal text-lime">otra oportunidad.</em></h1>
+          <p class="mt-7 max-w-[55ch] text-base leading-8 text-white/85 sm:text-lg">En re:food imaginamos una forma sencilla de conectar los excedentes de los restaurantes con personas que quieren disfrutarlos. Menos desperdicio, más sabor.</p>
+          <div class="mt-9 flex flex-wrap items-center gap-6"><a class="button button-light" href="#como-funciona">Descubre cómo funciona <ArrowRight size={18} aria-hidden="true" /></a><a class="hero-secondary" href="#proyecto">Conoce la iniciativa</a></div>
+        </div>
+        <p class="hero-footnote">Una propuesta en desarrollo · Sin reservas disponibles por ahora</p>
+      </div>
+    </section>
+
+    <section id="proyecto" class="section-pad bg-cream">
+      <div class="container grid items-center gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-24">
+        <div><p class="section-kicker"><span class="kicker-line"></span> El proyecto</p><h2 class="section-title mt-6">Aprovechar también es <em class="text-leaf">cuidar.</em></h2></div>
+        <div class="max-w-[55ch]"><p class="text-lg leading-8 text-ink/80">Cada plato preparado lleva tiempo, ingredientes y trabajo. Cuando sobra comida en buen estado, aún puede tener un destino mejor que acabar en la basura.</p><p class="mt-5 leading-8 text-ink/75">re:food nace para facilitar ese encuentro: restaurantes con excedentes y personas dispuestas a darles una segunda oportunidad.</p></div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="section-pad bg-white">
+      <div class="container">
+        <div class="flex flex-wrap items-end justify-between gap-6"><div class="max-w-[650px]"><p class="section-kicker"><span class="kicker-line"></span> Así lo imaginamos</p><h2 class="section-title mt-6">Tres pasos. Un plato que no se pierde.</h2></div><p class="max-w-[34ch] text-sm leading-7 text-ink/70">El recorrido que estamos construyendo para aprovechar comida de principio a fin.</p></div>
+        <div class="mt-14 grid border-y border-ink/15 md:grid-cols-3">
+          {steps.map((step) => <article class="step-item py-8 md:px-8 md:py-10 first:md:pl-0 last:md:pr-0">
+            <div class="flex items-center justify-between text-leaf"><span class="font-display text-lg">{step.number}</span><step.icon size={26} stroke-width={1.7} aria-hidden="true" /></div>
+            <h3 class="mt-10 font-display text-3xl">{step.title}</h3><p class="mt-4 max-w-[34ch] leading-7 text-ink/75">{step.text}</p>
+          </article>)}
+        </div>
+        <p class="mt-6 text-sm text-ink/70">Este recorrido describe la propuesta del proyecto; la plataforma todavía está en desarrollo.</p>
+      </div>
+    </section>
+
+    <section id="restaurantes" class="section-pad bg-mist">
+      <div class="container">
+        <div class="max-w-[760px]"><p class="section-kicker"><span class="kicker-line"></span> Restaurantes</p><h2 class="section-title mt-6">Una idea que empieza en las cocinas.</h2><p class="mt-6 max-w-[60ch] text-lg leading-8 text-ink/75">Los restaurantes son parte esencial de la propuesta: convertir sus excedentes en packs sorpresa para que más comida encuentre quien la disfrute.</p></div>
+        <div class="mt-12 grid gap-7 md:grid-cols-3">
+          {examples.map((example) => <figure class="restaurant-tile"><img src={example.image} alt={example.name} loading="lazy" decoding="async" width="480" height="360" /><figcaption class="px-1 pt-5"><h3 class="font-display text-xl">{example.name}</h3><p class="mt-1 text-sm text-ink/70">{example.description}</p></figcaption></figure>)}
+        </div>
+        <p class="mt-8 max-w-[75ch] text-xs leading-6 text-ink/70">Imágenes y nombres conservados del prototipo original como ejemplos visuales. No indican que estos locales participen actualmente ni que haya packs disponibles.</p>
+      </div>
+    </section>
+
+    <section id="impacto" class="section-pad bg-forest text-white">
+      <div class="container grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-24">
+        <div><p class="section-kicker text-lime"><span class="kicker-line bg-lime"></span> Nuestro propósito</p><h2 class="section-title mt-6">Pequeñas decisiones, <em class="text-lime">un cambio compartido.</em></h2></div>
+        <div class="divide-y divide-white/20">
+          <div class="flex gap-5 py-5 first:pt-0"><UtensilsCrossed class="mt-1 shrink-0 text-lime" size={25} aria-hidden="true" /><div><h3 class="font-display text-2xl">Dar valor a cada plato</h3><p class="mt-2 leading-7 text-white/75">Aprovechar comida preparada que sigue teniendo mucho que ofrecer.</p></div></div>
+          <div class="flex gap-5 py-5"><Leaf class="mt-1 shrink-0 text-lime" size={25} aria-hidden="true" /><div><h3 class="font-display text-2xl">Reducir el desperdicio</h3><p class="mt-2 leading-7 text-white/75">Impulsar hábitos más responsables en nuestro día a día.</p></div></div>
+          <div class="flex gap-5 py-5 last:pb-0"><MapPin class="mt-1 shrink-0 text-lime" size={25} aria-hidden="true" /><div><h3 class="font-display text-2xl">Conectar el barrio</h3><p class="mt-2 leading-7 text-white/75">Acercar las cocinas locales a las personas de su entorno.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-lime py-20 sm:py-24"><div class="container flex flex-wrap items-end justify-between gap-9"><div class="max-w-[730px]"><h2 class="section-title text-forest">Hagamos sitio para una nueva forma de aprovechar.</h2><p class="mt-6 max-w-[60ch] leading-8 text-forest/85">re:food está tomando forma. Mientras llega la experiencia completa, descubre la idea y compártela con quien también crea que la comida merece una segunda oportunidad.</p></div><a class="button button-dark" href="#inicio">Volver al inicio <ArrowUpRight size={18} aria-hidden="true" /></a></div></section>
   </main>
+
+  <footer class="bg-ink py-12 text-white">
+    <div class="container flex flex-wrap items-end justify-between gap-8"><div><a href="#inicio" class="brand text-white" aria-label="re:food, volver al inicio"><span class="brand-mark bg-lime text-forest"><Leaf size={21} aria-hidden="true" /></span>re<span class="text-lime">:</span>food</a><p class="mt-5 max-w-[38ch] text-sm leading-7 text-white/70">Una segunda oportunidad para cada plato. Un proyecto en desarrollo para aprovechar mejor la comida.</p></div><nav aria-label="Navegación del pie" class="flex flex-col gap-3 text-sm"><a class="footer-link" href="#como-funciona">Cómo funciona</a><a class="footer-link" href="#restaurantes">Restaurantes</a><a class="footer-link" href="#impacto">Nuestro propósito</a></nav></div>
+    <div class="container mt-12 border-t border-white/20 pt-6 text-xs text-white/65">© {new Date().getFullYear()} re:food · Proyecto en desarrollo</div>
+  </footer>
 
   <script>
     import { animate } from 'animejs';
-
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      animate('[data-intro]', {
-        opacity: [0, 1],
-        translateY: [12, 0],
-        duration: 650,
-        ease: 'outCubic',
-      });
+      animate('[data-intro]', { opacity: [0, 1], translateY: [16, 0], duration: 700, ease: 'outCubic' });
     }
   </script>
 </BaseLayout>
