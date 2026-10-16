@@ -1,4 +1,4 @@
-LICENCIA DE USO NO COMERCIAL — Refood Landing
+# LICENCIA DE USO NO COMERCIAL — Refood Landing
 Copyright © 2026 Juan García Cazallas ("rezzt-dev")
 Todos los derechos reservados salvo lo expresamente concedido en este documento.
 
@@ -7,7 +7,7 @@ derechos de propiedad intelectual indicado arriba (en adelante, el "Autor") y cu
 persona física o jurídica que acceda, descargue, copie o utilice el software distribuido
 en este repositorio (en adelante, el "Software").
 
-1. DEFINICIONES
+## 1. DEFINICIONES
 
 1.1. "Software": el código fuente, código objeto, documentación, recursos gráficos,
 scripts de build, ficheros de configuración y cualquier otro material contenido en este
@@ -29,7 +29,7 @@ resulte en una ventaja o contraprestación económica, incluyendo, sin carácter
 1.3. "Obra Derivada": cualquier modificación, traducción, adaptación, compilación o
 trabajo basado en el Software.
 
-2. CONCESIÓN DE LICENCIA
+## 2. CONCESIÓN DE LICENCIA
 
 Sujeto al cumplimiento estricto de los términos de este documento, el Autor concede a
 cualquier persona que obtenga una copia del Software una licencia limitada, no exclusiva,
@@ -41,7 +41,7 @@ educativos, de investigación académica o de evaluación técnica no comercial:
    c) compartir copias del Software, modificadas o no, siempre que se conserve íntegro
       este aviso de licencia y no se realice ningún Uso Comercial.
 
-3. RESTRICCIONES
+## 3. RESTRICCIONES
 
 Queda expresamente prohibido, salvo autorización previa y por escrito del Autor:
 
@@ -55,7 +55,7 @@ Queda expresamente prohibido, salvo autorización previa y por escrito del Autor
       un respaldo o afiliación de productos o servicios derivados, sin consentimiento
       expreso y por escrito.
 
-4. PROPIEDAD INTELECTUAL
+## 4. PROPIEDAD INTELECTUAL
 
 El Software está protegido por la legislación española de propiedad intelectual (Real
 Decreto Legislativo 1/1996, de 12 de abril, por el que se aprueba el Texto Refundido de
@@ -66,7 +66,7 @@ Todos los derechos no concedidos expresamente en este documento quedan reservado
 Autor. Esta licencia no transmite ni cede la titularidad de ningún derecho de propiedad
 intelectual o industrial sobre el Software.
 
-5. AUSENCIA DE GARANTÍA
+## 5. AUSENCIA DE GARANTÍA
 
 EL SOFTWARE SE PROPORCIONA "TAL CUAL" ("AS IS") Y "SEGÚN DISPONIBILIDAD", SIN GARANTÍA
 DE NINGÚN TIPO, YA SEA EXPRESA, IMPLÍCITA O LEGAL, INCLUYENDO, SIN CARÁCTER LIMITATIVO,
@@ -75,7 +75,7 @@ DETERMINADO, EXACTITUD Y NO INFRACCIÓN DE DERECHOS DE TERCEROS. EL AUTOR NO GAR
 EL SOFTWARE ESTÉ LIBRE DE ERRORES O VULNERABILIDADES, QUE SU FUNCIONAMIENTO SEA
 ININTERRUMPIDO, NI QUE RESULTE ADECUADO PARA UN USO O RESULTADO EN PARTICULAR.
 
-6. LIMITACIÓN DE RESPONSABILIDAD
+## 6. LIMITACIÓN DE RESPONSABILIDAD
 
 EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY APLICABLE Y, EN PARTICULAR, POR LOS ARTÍCULOS
 1902 Y CONCORDANTES DEL CÓDIGO CIVIL ESPAÑOL, EN NINGÚN CASO EL AUTOR SERÁ RESPONSABLE
@@ -88,21 +88,21 @@ RIESGO DERIVADO DE LA INSTALACIÓN, CONFIGURACIÓN, CALIDAD Y RENDIMIENTO DEL SO
 ANTERIOR NO EXCLUYE LA RESPONSABILIDAD QUE, CONFORME A DERECHO, NO PUEDA SER LIMITADA O
 EXCLUIDA VÁLIDAMENTE (POR EJEMPLO, DOLO O NEGLIGENCIA GRAVE DEL AUTOR).
 
-7. TERMINACIÓN
+## 7. TERMINACIÓN
 
 Esta licencia y los derechos concedidos en ella se extinguirán automáticamente, sin
 necesidad de notificación previa, en caso de incumplimiento de cualquiera de sus términos.
 Tras la extinción, el usuario deberá cesar de inmediato todo uso del Software y destruir
 o eliminar cualquier copia en su poder, salvo autorización expresa en contrario del Autor.
 
-8. LICENCIA COMERCIAL
+## 8. LICENCIA COMERCIAL
 
 Para obtener una licencia que permita el Uso Comercial del Software, contacte con el
 Autor en: contacto@rezzt.dev. El Autor se reserva el derecho a conceder dichas licencias
 en los términos económicos, técnicos y contractuales que estime oportunos, así como a
 denegarlas sin necesidad de justificar su decisión.
 
-9. LEY APLICABLE Y JURISDICCIÓN
+## 9. LEY APLICABLE Y JURISDICCIÓN
 
 Esta licencia se rige e interpreta de conformidad con la legislación española, con
 independencia del país de residencia del usuario. Para cualquier controversia derivada
@@ -115,7 +115,7 @@ de forma coherente con el Convenio de Berna y demás tratados internacionales de
 propiedad intelectual de los que España es parte, a fin de garantizar su reconocimiento
 y ejecutabilidad en otras jurisdicciones.
 
-10. DIVISIBILIDAD Y ACUERDO COMPLETO
+## 10. DIVISIBILIDAD Y ACUERDO COMPLETO
 
 Si alguna disposición de esta licencia fuera declarada inválida, nula o inaplicable por
 un tribunal u organismo competente, las restantes disposiciones permanecerán en pleno
@@ -127,15 +127,16 @@ entendimiento previo, oral o escrito, sobre la misma materia.
 En caso de discrepancia entre la versión en español y la versión en inglés de este
 documento, prevalecerá en todo caso la versión en español.
 
-================================================================================
+---
 
-NON-COMMERCIAL LICENSE — Refood Landing (English translation, informative — the
-Spanish version above is the sole legally binding text and prevails in case of conflict)
+# NON-COMMERCIAL LICENSE — Refood Landing (English translation, informative — the Spanish version above is the sole legally binding text and prevails in case of conflict)
 
 Copyright © 2026 Juan García Cazallas ("rezzt-dev"). All rights reserved except as
 expressly granted herein.
 
-1. DEFINITIONS. "Software" means the source code, object code, documentation, graphic
+## 1. DEFINITIONS.
+
+"Software" means the source code, object code, documentation, graphic
 assets, build scripts, configuration files and any other material contained in this
 repository, including future versions the Author releases under this same license.
 "Commercial Use" means any use of the Software, direct or indirect, that seeks or
@@ -148,7 +149,9 @@ except for a reasonable technical evaluation (maximum 30 days) prior to requesti
 commercial license. "Derivative Work" means any modification, translation, adaptation,
 compilation or work based on the Software.
 
-2. LICENSE GRANT. Subject to strict compliance with these terms, the Author grants
+## 2. LICENSE GRANT.
+
+Subject to strict compliance with these terms, the Author grants
 anyone obtaining a copy of the Software a limited, non-exclusive, non-transferable,
 revocable, worldwide license to, solely for personal, educational, academic research or
 non-commercial technical evaluation purposes: (a) view, download, install and run the
@@ -156,38 +159,52 @@ Software; (b) modify the Software and create Derivative Works; (c) share copies 
 Software, modified or not, provided this license notice is reproduced in full and no
 Commercial Use is made.
 
-3. RESTRICTIONS. Except with the Author's prior written permission, it is expressly
+## 3. RESTRICTIONS.
+
+Except with the Author's prior written permission, it is expressly
 prohibited to: (a) make any Commercial Use of the Software or Derivative Works; (b)
 sublicense, sell, rent or transfer to third parties the rights granted herein; (c)
 remove or alter copyright, authorship or license notices; (d) use the name
 "Refood Landing", the Author's name, the "rezzt-dev" mark or any associated
 distinctive sign to promote or imply endorsement of derivative products or services.
 
-4. INTELLECTUAL PROPERTY. The Software is protected under Spanish intellectual property
+## 4. INTELLECTUAL PROPERTY.
+
+The Software is protected under Spanish intellectual property
 law (Royal Legislative Decree 1/1996) and applicable international treaties, including
 the Berne Convention and the TRIPS Agreement. All rights not expressly granted herein
 are reserved by the Author. This license does not transfer ownership of any
 intellectual or industrial property right in the Software.
 
-5. NO WARRANTY. THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY
+## 5. NO WARRANTY.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY
 OF ANY KIND, EXPRESS, IMPLIED OR STATUTORY, INCLUDING WITHOUT LIMITATION THE IMPLIED
 WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE,
 ACCURACY AND NON-INFRINGEMENT.
 
-6. LIMITATION OF LIABILITY. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO
+## 6. LIMITATION OF LIABILITY.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO
 EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE
 OR CONSEQUENTIAL DAMAGES ARISING FROM THE USE OR INABILITY TO USE THE SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. NOTHING HEREIN EXCLUDES LIABILITY THAT
 CANNOT BE VALIDLY LIMITED OR EXCLUDED UNDER APPLICABLE LAW.
 
-7. TERMINATION. This license terminates automatically upon any breach of its terms.
+## 7. TERMINATION.
+
+This license terminates automatically upon any breach of its terms.
 Upon termination, the user must immediately cease all use of the Software and destroy
 any copies in their possession.
 
-8. COMMERCIAL LICENSE. To obtain a license permitting Commercial Use of the Software,
+## 8. COMMERCIAL LICENSE.
+
+To obtain a license permitting Commercial Use of the Software,
 contact the Author at: contacto@rezzt.dev.
 
-9. GOVERNING LAW AND JURISDICTION. This license is governed by and construed in
+## 9. GOVERNING LAW AND JURISDICTION.
+
+This license is governed by and construed in
 accordance with Spanish law, regardless of the user's country of residence. Any dispute
 arising from its interpretation or performance shall be submitted to the Courts of the
 Author's domicile in Spain, without prejudice to mandatory consumer-protection rules
@@ -196,5 +213,7 @@ with the Berne Convention and other international intellectual property treaties
 which Spain is a party, so as to ensure its recognition and enforceability in other
 jurisdictions.
 
-10. SEVERABILITY. If any provision of this license is held invalid or unenforceable,
+## 10. SEVERABILITY.
+
+If any provision of this license is held invalid or unenforceable,
 the remaining provisions shall remain in full force and effect.

@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #17312d;
+  --color-leaf: #257b5a;
+  --color-cream: #f7f5ed;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  min-width: 320px;
+}

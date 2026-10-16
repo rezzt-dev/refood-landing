@@ -1,0 +1,27 @@
+---
+import { Leaf } from '@lucide/astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="re:food — proyecto en preparación">
+  <main class="grid min-h-screen place-items-center px-6 py-16">
+    <div class="text-center" data-intro>
+      <Leaf class="mx-auto mb-6 text-leaf" size={40} stroke-width={1.5} aria-hidden="true" />
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">re:food</h1>
+      <p class="mt-4 text-base text-ink/70">Proyecto en preparación.</p>
+    </div>
+  </main>
+
+  <script>
+    import { animate } from 'animejs';
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      animate('[data-intro]', {
+        opacity: [0, 1],
+        translateY: [12, 0],
+        duration: 650,
+        ease: 'outCubic',
+      });
+    }
+  </script>
+</BaseLayout>
