@@ -1,0 +1,35 @@
+---
+import { ArrowUpRight, Leaf } from '@lucide/astro';
+---
+
+<footer class="site-footer bg-ink text-white">
+  <div class="container footer-grid">
+    <div class="footer-intro">
+      <a href="/" class="brand text-white" aria-label="re:food, ir al inicio"><span class="brand-mark bg-lime text-forest"><Leaf size={21} aria-hidden="true" /></span>re<span class="text-lime">:</span>food</a>
+      <p class="mt-6 max-w-[38ch] text-sm leading-7 text-white/80">Una segunda oportunidad para cada plato. Una propuesta para aprovechar mejor la comida.</p>
+      <p class="footer-project-note mt-6">Proyecto académico de EIE · Grado Superior de DAM.<br />re:food no es una empresa ni ofrece servicios comerciales.</p>
+    </div>
+    <nav aria-label="Explorar el sitio" class="footer-nav">
+      <h2 class="footer-heading">Explora</h2>
+      <a class="footer-link" href="/#proyecto">El proyecto</a>
+      <a class="footer-link" href="/#como-funciona">Cómo funciona</a>
+      <a class="footer-link" href="/#restaurantes">Restaurantes</a>
+      <a class="footer-link" href="/#impacto">Nuestro propósito</a>
+    </nav>
+    <nav aria-label="Información legal" class="footer-nav">
+      <h2 class="footer-heading">Información</h2>
+      <a class="footer-link" href="/aviso-legal/">Aviso legal</a>
+      <a class="footer-link" href="/privacidad/">Privacidad</a>
+      <a class="footer-link" href="/cookies/">Cookies</a>
+    </nav>
+    <div class="footer-nav">
+      <h2 class="footer-heading">Sobre la propuesta</h2>
+      <p class="text-sm leading-7 text-white/75">La web presenta una idea en desarrollo. No hay compras, reservas ni cuentas de usuario.</p>
+      <a class="footer-contact" href="mailto:contacto@rezzt.dev">Escribir al responsable <ArrowUpRight size={16} aria-hidden="true" /></a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© {new Date().getFullYear()} Juan García Cazallas · re:food, proyecto académico</p>
+    <a class="footer-link" href="/#inicio">Volver al inicio ↑</a>
+  </div>
+</footer>

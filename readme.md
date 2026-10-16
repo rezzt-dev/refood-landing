@@ -4,7 +4,7 @@ re:food es un proyecto web para reducir el desperdicio alimentario. la visión d
 
 ## ESTADO ACTUAL
 
-la aplicación nueva vive en `web/` y genera una landing estática que presenta el propósito del proyecto, el recorrido previsto de descubrimiento, reserva y recogida, y referencias visuales del prototipo anterior. la implementación anterior se conserva en `.docs/old-project/` como referencia; no se publica desde la nueva aplicación. la landing no ofrece reservas, datos actuales de restaurantes ni cuentas de usuario. no hay una dirección de producción anunciada ni una versión de producto estable.
+la aplicación nueva vive en `web/` y genera una landing estática que presenta el propósito del proyecto, el recorrido previsto de descubrimiento, reserva y recogida, y referencias visuales del prototipo anterior. también incluye páginas de aviso legal, privacidad y cookies. la implementación anterior se conserva en `.docs/old-project/` como referencia; no se publica desde la nueva aplicación. la landing no ofrece reservas, datos actuales de restaurantes ni cuentas de usuario. re:food es una propuesta académica del módulo de eie del grado superior de dam, no una empresa constituida. no hay una dirección de producción anunciada ni una versión de producto estable.
 
 ## TECNOLOGIAS
 

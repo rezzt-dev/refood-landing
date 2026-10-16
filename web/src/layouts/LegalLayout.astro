@@ -1,0 +1,40 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  eyebrow: string;
+  updated: string;
+}
+
+const { title, description, eyebrow, updated } = Astro.props;
+---
+
+<BaseLayout title={`${title} — re:food`} description={description}>
+  <SiteHeader />
+  <main id="contenido">
+    <div class="legal-hero bg-forest text-white">
+      <div class="container">
+        <a class="legal-back" href="/">← Volver al inicio</a>
+        <p class="section-kicker mt-12 text-lime"><span class="kicker-line bg-lime"></span> {eyebrow}</p>
+        <h1 class="legal-title mt-5">{title}</h1>
+        <p class="mt-5 max-w-[65ch] leading-8 text-white/85">{description}</p>
+        <p class="mt-7 text-xs text-white/70">Última revisión: {updated}</p>
+      </div>
+    </div>
+    <div class="bg-cream">
+      <div class="container legal-layout">
+        <aside class="legal-aside" aria-label="Contexto del proyecto">
+          <span class="legal-aside-mark">re:food / EIE</span>
+          <p>Esta web forma parte de un proyecto académico del módulo de Empresa e Iniciativa Emprendedora del Grado Superior de Desarrollo de Aplicaciones Multiplataforma.</p>
+          <p class="mt-4">La empresa descrita en la propuesta no existe y la plataforma no presta servicios reales.</p>
+        </aside>
+        <article class="legal-content"><slot /></article>
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>

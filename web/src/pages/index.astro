@@ -1,6 +1,8 @@
 ---
 import { ArrowRight, ArrowUpRight, Check, Leaf, MapPin, Search, ShoppingBag, UtensilsCrossed } from '@lucide/astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 const steps = [
   { number: '01', title: 'Explora', text: 'Descubre restaurantes cercanos con comida preparada para aprovechar.', icon: Search },
@@ -15,19 +17,7 @@ const examples = [
 ---
 
 <BaseLayout title="re:food — Una segunda oportunidad para cada plato" description="Conoce re:food, una propuesta para conectar comida excedente de restaurantes con personas que quieren aprovecharla.">
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <header class="site-header">
-    <div class="container flex min-h-20 items-center justify-between gap-5">
-      <a class="brand" href="#inicio" aria-label="re:food, ir al inicio"><span class="brand-mark"><Leaf size={21} aria-hidden="true" /></span>re<span class="text-leaf">:</span>food</a>
-      <nav aria-label="Navegación principal" class="hidden items-center gap-8 md:flex">
-        <a class="nav-link" href="#como-funciona">Cómo funciona</a><a class="nav-link" href="#restaurantes">Restaurantes</a><a class="nav-link" href="#impacto">Propósito</a>
-      </nav>
-      <a class="header-link" href="#proyecto">El proyecto <ArrowUpRight size={17} aria-hidden="true" /></a>
-    </div>
-    <nav aria-label="Navegación móvil" class="container flex gap-6 overflow-x-auto pb-3 md:hidden">
-      <a class="nav-link whitespace-nowrap" href="#como-funciona">Cómo funciona</a><a class="nav-link whitespace-nowrap" href="#restaurantes">Restaurantes</a><a class="nav-link whitespace-nowrap" href="#impacto">Propósito</a>
-    </nav>
-  </header>
+  <SiteHeader />
 
   <main id="contenido">
     <section id="inicio" class="hero relative overflow-hidden">
@@ -87,10 +77,7 @@ const examples = [
     <section class="bg-lime py-20 sm:py-24"><div class="container flex flex-wrap items-end justify-between gap-9"><div class="max-w-[730px]"><h2 class="section-title text-forest">Hagamos sitio para una nueva forma de aprovechar.</h2><p class="mt-6 max-w-[60ch] leading-8 text-forest/85">re:food está tomando forma. Mientras llega la experiencia completa, descubre la idea y compártela con quien también crea que la comida merece una segunda oportunidad.</p></div><a class="button button-dark" href="#inicio">Volver al inicio <ArrowUpRight size={18} aria-hidden="true" /></a></div></section>
   </main>
 
-  <footer class="bg-ink py-12 text-white">
-    <div class="container flex flex-wrap items-end justify-between gap-8"><div><a href="#inicio" class="brand text-white" aria-label="re:food, volver al inicio"><span class="brand-mark bg-lime text-forest"><Leaf size={21} aria-hidden="true" /></span>re<span class="text-lime">:</span>food</a><p class="mt-5 max-w-[38ch] text-sm leading-7 text-white/70">Una segunda oportunidad para cada plato. Un proyecto en desarrollo para aprovechar mejor la comida.</p></div><nav aria-label="Navegación del pie" class="flex flex-col gap-3 text-sm"><a class="footer-link" href="#como-funciona">Cómo funciona</a><a class="footer-link" href="#restaurantes">Restaurantes</a><a class="footer-link" href="#impacto">Nuestro propósito</a></nav></div>
-    <div class="container mt-12 border-t border-white/20 pt-6 text-xs text-white/65">© {new Date().getFullYear()} re:food · Proyecto en desarrollo</div>
-  </footer>
+  <SiteFooter />
 
   <script>
     import { animate } from 'animejs';
