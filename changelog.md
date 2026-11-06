@@ -6,6 +6,7 @@
 
 #### AÑADIDO
 
+- añadir `.docs/manager.md`, `.docs/repo-audit-and-fix.md` y las guías de commits, pr, releases, changelog y ramas en `.docs/-github-guides/`.
 - incorporar una nueva fotografía optimizada para la portada y una sección que explica la propuesta desde las cocinas y las personas.
 - añadir `web/public/images/hero-table.webp` como imagen principal orientada a la idea de compartir un plato rescatado.
 - añadir la sección de intercambio en `web/src/pages/index.astro` para explicar el valor de la propuesta para cocinas y personas.
@@ -20,6 +21,10 @@
 
 #### CAMBIADO
 
+- completar las guías de gestión y el contexto específico del proyecto; conservar las reglas técnicas y verificar las rutas
+- corregir el ejemplo de promociones entre ramas para evitar destinos idénticos al origen
+
+- rehacer `claude.md` y `agents.md` con el mapa real del proyecto y el resumen de las reglas de git y github.
 - renovar el mensaje, la composición visual y la navegación de la portada, con ajustes específicos para móvil.
 - mejorar los metadatos sociales y aclarar el carácter ilustrativo de los restaurantes del prototipo.
 - actualizar la imagen de portada, el contraste, los botones y la navegación responsive en `web/src/styles/global.css`.
@@ -36,10 +41,15 @@
 - rediseñar la galería de restaurantes como una colección editorial con una ficha destacada, tarjetas secundarias, categorías y estados visuales coherentes.
 - separar la lógica de navegación de la galería en `web/src/scripts/restaurant-gallery.ts` y mantener el movimiento general de la portada en `web/src/scripts/home-motion.ts`.
 
+#### ELIMINADO
+
+- retirar `.docs/guidelines/commit-guidelines.md` y `.docs/guidelines/pr-merge-release-guidelines.md`, sustituidas por las nuevas guías.
+
 ### ENGLISH
 
 #### ADDED
 
+- add `.docs/manager.md`, `.docs/repo-audit-and-fix.md` and the commit, pr, release, changelog and branching guides in `.docs/-github-guides/`.
 - add an optimized hero photograph and a section explaining the proposal for kitchens and visitors.
 - add `web/public/images/hero-table.webp` as the main image for the rescued-meal concept.
 - add the exchange section in `web/src/pages/index.astro` to explain the proposal for kitchens and visitors.
@@ -54,6 +64,10 @@
 
 #### CHANGED
 
+- complete repository management guides and project-specific context; preserve technical rules and verify paths
+- correct the branch promotion example to avoid destinations identical to the source
+
+- rewrite `claude.md` and `agents.md` with the real project map and the git and github workflow digest.
 - refresh homepage copy, visual composition and navigation, including mobile refinements.
 - improve social metadata and clarify that prototype restaurant examples are illustrative.
 - update the hero image, contrast, buttons and responsive navigation in `web/src/styles/global.css`.
@@ -69,3 +83,7 @@
 - keep the gallery keyboard and touch navigable, and preserve a static composition when reduced motion or the viewport prevents the scroll effect.
 - redesign the restaurant gallery as an editorial collection with a featured card, secondary cards, categories and consistent visual states.
 - separate gallery navigation logic into `web/src/scripts/restaurant-gallery.ts` and keep the homepage motion system in `web/src/scripts/home-motion.ts`.
+
+#### REMOVED
+
+- remove `.docs/guidelines/commit-guidelines.md` and `.docs/guidelines/pr-merge-release-guidelines.md`, replaced by the new guides.

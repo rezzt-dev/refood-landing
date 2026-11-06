@@ -1,21 +1,35 @@
-# GUIA PARA CLAUDE
+# REFOOD-LANDING: WORKING INSTRUCTIONS
 
-## CONTEXTO Y OBJETIVO
+read [`agents.md`](./agents.md) for the project architecture, module commands, existing conventions and security requirements. this repository implements static landing page presenting an academic food-waste reduction proposal.
 
-re:food busca reducir el desperdicio alimentario conectando a personas con restaurantes que ofrecen excedentes. el sitio actual es una base técnica estática en `web/`; su inicio provisional no implementa descubrimiento, reservas ni recogida. `.docs/old-project/` es material de referencia, no código activo.
+the active source lives in `web/`; the changelog is `changelog.md`. the remote default is `main`, and repository-management work currently targets `main`.
 
-## LECTURA OBLIGATORIA
+do not describe reservations, restaurant data or accounts as implemented; preserve legal pages and the historical site as reference.
 
-al inicio de cada tarea, accede siempre a `.docs/skills/`, enumera los archivos `SKILL.md` y lee las habilidades aplicables con las referencias que necesites. sus rutas se resuelven desde `.docs/skills/` aunque el texto importado mencione `.agents/skills/`. revisa también `.docs/guidelines/` y lee [agents.md](agents.md) para el mapa de arquitectura, el formato de `changelog.md` y las reglas de entrega. no apliques automáticamente habilidades de react o `shadcn`: comprueba antes si la tecnología está presente.
+`.docs/manager.md` selects the git workflow guides. `.docs/repo-audit-and-fix.md` defines the separate audit procedure; reading that file does not authorize executing every phase.
 
-para cualquier edición markdown, lee `.docs/guidelines/markdown-guidelines.md`: contenido en minúsculas con tildes y encabezados en mayúsculas sin tildes. conserva literalmente rutas, comandos y código. el texto contractual de `license.md` se mantiene íntegro salvo indicación expresa del titular.
+for documentation changes, validate paths and `git diff --check`. for application changes, run the relevant checks in `agents.md`. preserve pre-existing user changes and keep this entry point consistent with the comprehensive guide.
 
-## TRABAJO EN `web/`
+## COMMIT, PR, MERGE & RELEASE GUIDELINES
 
-usa `astro` y componentes `.astro` como base; `vite` ya forma parte de astro. los estilos usan `tailwindcss` v4 con `@tailwindcss/vite`, los iconos usan `@lucide/astro` y las animaciones pueden usar `animejs`. mantén html semántico, accesibilidad, uso prudente de javascript y soporte para movimiento reducido. no inventes datos o funcionalidades que aún no existen.
+read `.docs/manager.md` first, then the selected guide in `.docs/-github-guides/`. these files are versioned; this digest also works without opening them.
 
-antes de entregar cambios de aplicación, ejecuta `npm run check` y `npm run build` desde `web/`. para documentación, verifica enlaces y formato, además de `git diff --check`. respeta cambios previos del usuario y explica los resultados con precisión.
+| request | guide |
+| --- | --- |
+| commit title, body and changelog | `commit-guide.md`, `changelog-guide.md` |
+| pull request or merge | `pr-merge-guide.md`, `branching-guide.md` |
+| version and release | `release-guide.md`, `changelog-guide.md` |
+| permissions and sensitive data | `agent-rules.md` |
 
-## PUBLICACION Y SEGURIDAD
-
-usa `.docs/guidelines/commit-guidelines.md` al redactar commits y `.docs/guidelines/pr-merge-release-guidelines.md` para pull requests, merges y releases. registra cambios relevantes en `changelog.md` con el formato indicado en `agents.md`. las vulnerabilidades se comunican de forma privada según [security.md](security.md); no publiques detalles explotables en incidencias abiertas.
+- inspect `git status`, both diffs and recent history before describing changes
+- use `<prefix> | <imperative summary>` with `update`, `fix`, `hotfix`, `changes` or `changelog`; keep titles within 72 characters
+- write commit bodies as 2 to 6 markdown bullets, one logical change per line, with literal paths in backticks
+- never add authorship footers, automated attribution, signatures or generation notices; preserve the configured git identity
+- update `changelog.md` under `## SIN PUBLICAR / UNRELEASED` in matching `### CASTELLANO` and `### ENGLISH` sections
+- use the existing changelog category vocabulary and preserve language parity; describe only changes in the actual diff
+- summarize pull requests in 1 to 3 bullets per category and language, at most 110 characters per bullet
+- documentation and repository-management work targets `main`; the remote default is `main`; do not silently promote development work to the default branch
+- the authorization for a requested action remains valid throughout that task; creating a pull request includes pushing its branch, but does not authorize merging or publishing
+- use merge commits when a merge is requested; never force-push, rewrite published history or remove branches without an explicit instruction
+- releases use the approved version and an immutable tag on the verified release commit, with english notes from the closed changelog; do not create a release for documentation work
+- deliver requested titles, bodies and changelog fragments in separate code blocks; report executed actions with their commit hash or pull request link
