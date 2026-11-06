@@ -23,7 +23,7 @@
 |---|---|
 | `update` | trabajo normal hacia adelante: anade o mejora funcionalidad, contenido o documentacion. es el prefijo por defecto |
 | `fix` | corrige un error detectado durante el desarrollo, sin urgencia de publicacion |
-| `hotfix` | corrige algo urgente que afecta al sitio ya publicado o bloquea el trabajo |
+| `hotfix` | corrige algo urgente que afecta a una version ya publicada o bloquea el trabajo |
 | `changes` | cambios estructurales o no funcionales: mover o renombrar ficheros, configuracion, tooling, dependencias |
 | `changelog` | el unico proposito del commit es editar `changelog.md` |
 
@@ -32,11 +32,11 @@ si un commit mezcla un fix y una mejora, se divide en dos. si no es posible, gan
 ### ejemplos
 
 ```
-update | anadir la seccion de intercambio a la portada
-fix | corregir el contador de la galeria al navegar con teclado
-hotfix | restaurar la imagen de portada rota en el sitio publicado
-changes | mover la logica de la galeria a restaurant-gallery.ts
-changelog | cerrar la seccion de la version 0.1.0
+update | completar la documentacion del proyecto
+fix | corregir una referencia rota en la documentacion
+hotfix | corregir un fallo critico de la version publicada
+changes | reorganizar la documentacion del proyecto
+changelog | cerrar la seccion de la version 1.4.0
 ```
 
 ---
@@ -52,17 +52,16 @@ changelog | cerrar la seccion de la version 0.1.0
 
 ejemplo:
 
-```
-- anadir la galeria de restaurantes con ficha destacada y tarjetas secundarias en `web/src/pages/index.astro`
-- separar la navegacion de la galeria en `web/src/scripts/restaurant-gallery.ts`
-- mantener una composicion estatica cuando `prefers-reduced-motion` esta activo
+```text
+- adaptar las guias de gestion a las rutas y ramas del proyecto
+- conservar las convenciones tecnicas y retirar instrucciones duplicadas
 ```
 
 ---
 
 ## 3. CHANGELOG
 
-todo commit con cambios visibles para usuarios o desarrolladores actualiza `changelog.md` en el mismo commit, dentro de `## SIN PUBLICAR / UNRELEASED`, en castellano e ingles. las reglas estan en `changelog-guide.md` (el contenido del changelog lleva acentos, a diferencia del commit). solo se exceptuan los commits `changelog` (que ya son el cambio) y los que no tocan nada publicable (por ejemplo, ajustes de `.gitignore` locales).
+todo commit con cambios visibles para usuarios o desarrolladores actualiza `changelog.md` en el mismo commit, dentro de `## SIN PUBLICAR / UNRELEASED`, en castellano e ingles. las reglas estan en `changelog-guide.md`. solo se exceptuan los commits `changelog` (que ya son el cambio) y los que no tocan nada publicable (por ejemplo, ajustes de `.gitignore` locales).
 
 ---
 
@@ -87,7 +86,7 @@ git add <ficheros>
 git commit -m "<titulo>" -m "<descripcion>"
 ```
 
-se anaden los ficheros por nombre, nunca `git add -A` a ciegas; se comprueba antes con `git status` que no entran ficheros ignorados, `.env*`, `web/node_modules/`, `web/dist/` ni `web/.astro/`.
+se anaden los ficheros por nombre, nunca `git add -A` a ciegas; se comprueba antes con `git status` que no entran ficheros ignorados, claves ni artefactos de compilacion.
 
 ---
 
@@ -98,3 +97,7 @@ se anaden los ficheros por nombre, nunca `git add -A` a ciegas; se comprueba ant
 - [ ] cada item ocupa una sola linea y empieza por `-`.
 - [ ] el changelog esta actualizado en los dos idiomas.
 - [ ] no hay atribucion de ia ni `co-authored-by`.
+
+## ESTILO LOCAL
+
+para documentos markdown, prevalece `.docs/guidelines/markdown-guidelines.md`: conservar los acentos y las excepciones literales que indique. el formato de mensajes de git se aplica al preparar sus titulos y cuerpos.

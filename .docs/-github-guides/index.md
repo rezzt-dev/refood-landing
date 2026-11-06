@@ -4,10 +4,8 @@
 > pull requests, merges, releases, changelog y ramas. estan pensadas para que
 > cualquier agente de ia (o persona) devuelva titulos y descripciones listos
 > para copiar y pegar, sin trabajo extra. las guias antiguas
-> (`.docs/guidelines/commit-guidelines.md` y
-> `.docs/guidelines/pr-merge-release-guidelines.md`) ya no existen: estas son
-> las unicas vigentes. el punto de entrada es `.docs/manager.md`, un nivel por
-> encima de esta carpeta.
+> (`commit-guidelines.md` y `pr-merge-release-guidelines.md`) ya no existen:
+> estas son las unicas vigentes. el punto de entrada es `.docs/manager.md`, un nivel por encima de esta carpeta.
 
 ---
 
@@ -22,8 +20,6 @@
 | `release-guide.md` | titulo, descripcion y tag de las releases de github |
 | `changelog-guide.md` | como se escribe y se cierra `changelog.md` |
 | `branching-guide.md` | ramas, flujo de versiones y que rama es la base de cada pr |
-
-`.docs/guidelines/markdown-guidelines.md` sigue vigente para el contenido de los ficheros markdown del proyecto (`readme.md`, `security.md`, `changelog.md`...): contenido en minusculas con acentos y encabezados en mayusculas sin acentos.
 
 ---
 
@@ -44,4 +40,7 @@
 - nombres de ficheros, rutas, comandos e identificadores van siempre entre backticks.
 - las fechas usan el formato `aaaa-mm-dd`.
 - el resultado se entrega siempre en bloques de codigo separados: uno por cada pieza (titulo, descripcion, fragmento de changelog), nunca juntos.
-- excepcion: el contenido de `changelog.md` conserva los acentos ortograficos que exige `markdown-guidelines.md` (ver `changelog-guide.md`).
+
+## ESTILO LOCAL
+
+para documentos markdown, prevalece `.docs/guidelines/markdown-guidelines.md`: conservar los acentos y las excepciones literales que indique. el formato de mensajes de git se aplica al preparar sus titulos y cuerpos.

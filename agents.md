@@ -1,44 +1,119 @@
-# re:food landing — Agent Guide
+# REFOOD-LANDING: REPOSITORY GUIDE
 
-> **re:food** is a web project about reducing food waste: its product vision is to connect people with nearby restaurants that offer surplus prepared food through a discover → book → pick up flow. The current code is a **static landing page** that presents the idea; it has no bookings, accounts, real restaurant data, forms or external services. re:food is an academic proposal (EIE module, DAM higher-vocational degree), not an incorporated company — never present unfinished features as available.
+static landing page presenting an academic food-waste reduction proposal. this guide covers the repository; nested agent instructions apply within their own folders.
+
+## PROJECT OVERVIEW
+
+| property | verified value |
+| --- | --- |
+| repository | `rezzt-dev/refood-landing` |
+| active source | `web/` |
+| development base for this change | `main` |
+| remote default branch | `main` |
+| version source | `web/package.json`: `0.1.0` |
+| continuous integration | no tracked github actions workflows |
+
+## TECHNOLOGY STACK
+
+- `web/package.json`: `astro` ^7.4.0, `tailwindcss` ^4.3.3, `typescript` ^6.0.3
+
+## PROJECT STRUCTURE
+
+- `changelog.md`
+- `license.md`
+- `readme.md`
+- `security.md`
+- `web/`
+
+management documentation lives in `.docs/manager.md`, `.docs/-github-guides/` and `.docs/repo-audit-and-fix.md`. keep this file and `claude.md` consistent.
+
+## BUILD, RUN AND TEST COMMANDS
+
+from `web/`, the available package scripts are:
+
+| command | implementation |
+| --- | --- |
+| `npm run dev` | `astro dev` |
+| `npm run build` | `astro build` |
+| `npm run preview` | `astro preview` |
+| `npm run check` | `astro check` |
+
+for application changes, run these checks from `web/`:
+
+```bash
+npm run check
+npm run build
+```
+
+## CODE STYLE AND ARCHITECTURAL DECISIONS
+
+do not describe reservations, restaurant data or accounts as implemented; preserve legal pages and the historical site as reference. follow the existing formatter and naming of the changed module. verify manifest versions when dependencies change.
+
+## TESTING STRATEGY
+
+documentation-only changes require `git diff --check`, existing-path checks and a review of the staged file list. run module checks for application changes, with disposable data. report unavailable tooling and failed checks; never claim a check passed without running it.
+
+## SECURITY AND DEPLOYMENT
+
+keep credentials, local configuration, signing material and user data out of commits. do not print secret values while auditing. inspect configuration names and code references instead.
+
+existing legal and community files: `license.md`, `security.md`. when changing dependencies, permissions, storage or network services, review those files against the implementation. record missing policies as audit work; do not invent licence terms or ownership decisions.
+
+deployment, signing, store publication, migrations against hosted databases and repository settings require their own explicit request. this documentation task prepares management instructions and pull requests.
+
+## COMMON TASKS
+
+1. read the relevant module and its nearest agent instructions
+2. inspect the working tree and choose the smallest change that solves the request
+3. update the affected documentation and changelog with evidence from the diff
+4. run checks appropriate to the changed module and report their actual results
+5. for git operations, follow the manager and the digest below
+
+## EXISTING PROJECT CONVENTIONS
+
+the following project-specific context is retained from the previous guide. paths are relative to the active module when stated. for git operations, the manager and final digest supersede previous workflow examples.
+
+## RE:FOOD LANDING — AGENT GUIDE
+
+> **re:food** is a web project about reducing food waste: its product vision is to connect people with nearby restaurants that offer surplus prepared food through a discover → book → pick up flow. the current code is a **static landing page** that presents the idea; it has no bookings, accounts, real restaurant data, forms or external services. re:food is an academic proposal (eie module, dam higher-vocational degree), not an incorporated company — never present unfinished features as available.
 >
-> **Git workflow (commits, PRs, merges, releases):** when asked for a commit, PR, merge or release title/description, read `.docs/manager.md` first and follow the guides in `.docs/-github-guides/` (versioned in this repository); the last section of this file ("Commit, PR, Merge & Release Guidelines") is their digest. Never add AI attribution of any kind.
+> **git workflow (commits, prs, merges, releases):** when asked for a commit, pr, merge or release title/description, read `.docs/manager.md` first and follow the guides in `.docs/-github-guides/` (versioned in this repository); the last section of this file ("commit, pr, merge & release guidelines") is their digest. never add ai attribution of any kind.
 
 ---
 
-## Project Overview
+## PROJECT OVERVIEW
 
-| Property | Value |
+| property | value |
 |----------|-------|
-| **Repository** | `rezzt-dev/refood-landing` (public), single branch `main` |
-| **Published site** | `https://refood.rezzt.dev` (static hosting, served by LiteSpeed) |
-| **App folder** | `web/` (npm package `refood-web`, `"private": true`) |
-| **Version** | `0.1.0` in `web/package.json`; no tags or releases yet |
-| **Framework** | Astro 7.4 (`output: 'static'`) |
-| **Language** | TypeScript (strict, `astro/tsconfigs/strict`), site copy in Spanish (`<html lang="es">`) |
-| **Runtime** | Node.js `>=22.22.0`, npm `>=9.6.5` (Astro 7 engines) |
-| **License** | custom non-commercial license (`license.md`, Spanish only) |
+| **repository** | `rezzt-dev/refood-landing` (public), single branch `main` |
+| **published site** | `https://refood.rezzt.dev` (static hosting, served by litespeed) |
+| **app folder** | `web/` (npm package `refood-web`, `"private": true`) |
+| **version** | `0.1.0` in `web/package.json`; no tags or releases yet |
+| **framework** | astro 7.4 (`output: 'static'`) |
+| **language** | typescript (strict, `astro/tsconfigs/strict`), site copy in spanish (`<html lang="es">`) |
+| **runtime** | node.js `>=22.22.0`, npm `>=9.6.5` (astro 7 engines) |
+| **license** | custom non-commercial license (`license.md`, spanish only) |
 
 ---
 
-## Technology Stack
+## TECHNOLOGY STACK
 
-### Core
-- **Astro 7** — routes, `.astro` components and static HTML generation; Vite is bundled with Astro (do not add a second Vite project).
-- **Tailwind CSS v4** through `@tailwindcss/vite` (registered in `web/astro.config.mjs`); theme tokens are defined with `@theme` in `web/src/styles/global.css`.
-- **TypeScript 6** + `@astrojs/check` for type and template diagnostics.
+### CORE
+- **astro 7** — routes, `.astro` components and static html generation; vite is bundled with astro (do not add a second vite project).
+- **tailwind css v4** through `@tailwindcss/vite` (registered in `web/astro.config.mjs`); theme tokens are defined with `@theme` in `web/src/styles/global.css`.
+- **typescript 6** + `@astrojs/check` for type and template diagnostics.
 
-### UI & Motion
-- **`@lucide/astro`** — SVG icons as Astro components.
+### UI & MOTION
+- **`@lucide/astro`** — svg icons as astro components.
 - **`animejs` 4** — scroll and reveal motion in `web/src/scripts/home-motion.ts`.
-- **Fonts** — `@fontsource/poppins` (latin 400/600) and `@fontsource-variable/fraunces`, bundled locally (no font CDN).
+- **fonts** — `@fontsource/poppins` (latin 400/600) and `@fontsource-variable/fraunces`, bundled locally (no font cdn).
 
-### Data & Storage
-- None. No backend, no API calls, no cookies, no `localStorage` / `sessionStorage`, no analytics (stated in `web/src/pages/cookies.astro` and `privacidad.astro`). Restaurant cards in `index.astro` are hard-coded illustrative examples.
+### DATA & STORAGE
+- none. no backend, no api calls, no cookies, no `localStorage` / `sessionStorage`, no analytics (stated in `web/src/pages/cookies.astro` and `privacidad.astro`). restaurant cards in `index.astro` are hard-coded illustrative examples.
 
 ---
 
-## Project Structure
+## PROJECT STRUCTURE
 
 ```
 .
@@ -89,9 +164,9 @@
 
 ---
 
-## Build / Run / Test Commands
+## BUILD / RUN / TEST COMMANDS
 
-All commands run from `web/`:
+all commands run from `web/`:
 
 ```bash
 cd web
@@ -112,184 +187,181 @@ npm run build
 npm run preview
 ```
 
-For documentation-only changes: check links, paths and format, and run `git diff --check`.
+for documentation-only changes: check links, paths and format, and run `git diff --check`.
 
-### Build Configuration Notes
-- `web/astro.config.mjs` sets `output: 'static'` and registers `tailwindcss()` as a Vite plugin; there is no Astro integration list.
-- `web/.gitignore` ignores `node_modules/`, `dist/`, `.astro/`, `.env` and `.env.*` (except `.env.example`). There is no root `.gitignore`.
-- Both npm and pnpm lockfiles are versioned; until the owner picks one, keep them in sync if you change dependencies, or flag it.
-- Keep dependencies and configuration inside `web/`. Do not add a UI framework, a second Vite project or an external service unless the task requires it.
-
----
-
-## Code Style Guidelines
-
-### Language & Tone
-- Site copy is Spanish, in normal sentence case, calm and factual; it must keep stating that re:food is an academic proposal and that bookings and the prototype restaurants are not available.
-- Markdown documents follow `.docs/guidelines/markdown-guidelines.md`: content in lowercase **with** Spanish accents, headings in uppercase **without** accents (`ñ` kept as `Ñ`), identifiers literal between backticks. `license.md` is legal text: format-only changes unless the owner says otherwise.
-- Repository document file names stay lowercase, with no uppercase duplicates.
-
-### Astro & Markup
-- Astro components and semantic HTML by default; add browser JavaScript only when an interaction needs it, as a `<script src="../scripts/*.ts">` module.
-- Shared page chrome goes through `BaseLayout.astro` / `LegalLayout.astro` and the `SiteHeader` / `SiteFooter` components; new legal pages use `LegalLayout` with `title`, `eyebrow`, `updated` and `description`.
-- Scripts find their elements through `data-*` hooks (`data-story`, `data-gallery-track`, `data-reveal`, `data-scroll-progress`...) and must no-op when the element is missing.
-
-### Styling
-- Colours and fonts come from the `@theme` tokens in `global.css` (`ink`, `forest`, `leaf`, `lime`, `cream`, `mist`; `--font-sans` Poppins, `--font-display` Fraunces). Do not hard-code new palettes.
-- Utilities in markup, reusable component classes (`.button`, `.section-title`, `.container`...) in `global.css`.
-
-### Accessibility & Motion
-- Understandable labels, keyboard navigation, visible focus (`:focus-visible`), sufficient contrast, skip link to `#contenido`.
-- Every animation respects `prefers-reduced-motion` (scripts read `matchMedia('(prefers-reduced-motion: reduce)')` and fall back to a static layout).
-- Never animate content in a way that leaves it hidden if JavaScript fails.
+### BUILD CONFIGURATION NOTES
+- `web/astro.config.mjs` sets `output: 'static'` and registers `tailwindcss()` as a vite plugin; there is no astro integration list.
+- `web/.gitignore` ignores `node_modules/`, `dist/`, `.astro/`, `.env` and `.env.*` (except `.env.example`). there is no root `.gitignore`.
+- both npm and pnpm lockfiles are versioned; until the owner picks one, keep them in sync if you change dependencies, or flag it.
+- keep dependencies and configuration inside `web/`. do not add a ui framework, a second vite project or an external service unless the task requires it.
 
 ---
 
-## Testing Strategy
+## CODE STYLE GUIDELINES
 
-There is no automated test suite and no CI (`.github/workflows/` does not exist). Verification is:
+### LANGUAGE & TONE
+- site copy is spanish, in normal sentence case, calm and factual; it must keep stating that re:food is an academic proposal and that bookings and the prototype restaurants are not available.
+- markdown documents follow `.docs/guidelines/markdown-guidelines.md`: content in lowercase **with** spanish accents, headings in uppercase **without** accents (`ñ` kept as `Ñ`), identifiers literal between backticks. `license.md` is legal text: format-only changes unless the owner says otherwise.
+- repository document file names stay lowercase, with no uppercase duplicates.
 
-| Check | Command | When |
+### ASTRO & MARKUP
+- astro components and semantic html by default; add browser javascript only when an interaction needs it, as a `<script src="../scripts/*.ts">` module.
+- shared page chrome goes through `BaseLayout.astro` / `LegalLayout.astro` and the `SiteHeader` / `SiteFooter` components; new legal pages use `LegalLayout` with `title`, `eyebrow`, `updated` and `description`.
+- scripts find their elements through `data-*` hooks (`data-story`, `data-gallery-track`, `data-reveal`, `data-scroll-progress`...) and must no-op when the element is missing.
+
+### STYLING
+- colours and fonts come from the `@theme` tokens in `global.css` (`ink`, `forest`, `leaf`, `lime`, `cream`, `mist`; `--font-sans` poppins, `--font-display` fraunces). do not hard-code new palettes.
+- utilities in markup, reusable component classes (`.button`, `.section-title`, `.container`...) in `global.css`.
+
+### ACCESSIBILITY & MOTION
+- understandable labels, keyboard navigation, visible focus (`:focus-visible`), sufficient contrast, skip link to `#contenido`.
+- every animation respects `prefers-reduced-motion` (scripts read `matchMedia('(prefers-reduced-motion: reduce)')` and fall back to a static layout).
+- never animate content in a way that leaves it hidden if javascript fails.
+
+---
+
+## TESTING STRATEGY
+
+there is no automated test suite and no ci (`.github/workflows/` does not exist). verification is:
+
+| check | command | when |
 |---|---|---|
-| Types and Astro templates | `npm run check` (in `web/`) | every app change |
-| Static build | `npm run build` (in `web/`) | every app change |
-| Manual review | `npm run preview` at the relevant viewport sizes and with reduced motion on | UI changes, when tooling is available |
-| Docs | link/path check + `git diff --check` | documentation changes |
+| types and astro templates | `npm run check` (in `web/`) | every app change |
+| static build | `npm run build` (in `web/`) | every app change |
+| manual review | `npm run preview` at the relevant viewport sizes and with reduced motion on | ui changes, when tooling is available |
+| docs | link/path check + `git diff --check` | documentation changes |
 
 `TODO(owner): decide whether to add CI (check + build) and any accessibility or link checks.`
 
 ---
 
-## Key Architectural Decisions
+## KEY ARCHITECTURAL DECISIONS
 
-### 1. Static Astro site, no framework islands
-The landing is pure Astro components rendered to static HTML. React and `shadcn` skills exist in `.docs/skills/` but do not apply unless a task introduces those technologies.
+### 1. STATIC ASTRO SITE, NO FRAMEWORK ISLANDS
+the landing is pure astro components rendered to static html. react and `shadcn` skills exist in `.docs/skills/` but do not apply unless a task introduces those technologies.
 
-### 2. `.docs/old-project/` is reference only
-The previous HTML/CSS/JS site is kept for visual and content reference. It is not compiled or published; do not restore files from it without a concrete need, and do not treat its data as current.
+### 2. `.docs/old-project/` IS REFERENCE ONLY
+the previous html/css/js site is kept for visual and content reference. it is not compiled or published; do not restore files from it without a concrete need, and do not treat its data as current.
 
-### 3. No data, no tracking
-No cookies, browser storage, analytics, forms or third-party embeds. This is what the legal pages promise; anything that changes it must update them first (see Deployment Notes).
+### 3. NO DATA, NO TRACKING
+no cookies, browser storage, analytics, forms or third-party embeds. this is what the legal pages promise; anything that changes it must update them first (see deployment notes).
 
-### 4. Local fonts and images
-Fonts are bundled through Fontsource packages and images are served from `web/public/images/` as WebP, so the site makes no third-party requests.
+### 4. LOCAL FONTS AND IMAGES
+fonts are bundled through fontsource packages and images are served from `web/public/images/` as webp, so the site makes no third-party requests.
 
-### 5. Skills live in `.docs/skills/`
-Imported agent skills are versioned under `.docs/skills/`, not `.agents/skills/`; resolve any internal example path from their real directory before running a script.
+### 5. SKILLS LIVE IN `.docs/skills/`
+imported agent skills are versioned under `.docs/skills/`, not `.agents/skills/`; resolve any internal example path from their real directory before running a script.
 
 ---
 
-## Security Considerations
+## SECURITY CONSIDERATIONS
 
-- Static output only: no server code, no secrets needed to build. `.env*` files are gitignored in `web/`; never read or commit them.
-- External links use `rel="noopener noreferrer"` when opening in a new tab (see `privacidad.astro`).
-- Vulnerabilities are reported privately to `contacto@rezzt.dev` (subject `re:food — informe de seguridad`) or through GitHub private reporting if enabled, as described in `security.md`; never publish exploitable details in public issues.
+- static output only: no server code, no secrets needed to build. `.env*` files are gitignored in `web/`; never read or commit them.
+- external links use `rel="noopener noreferrer"` when opening in a new tab (see `privacidad.astro`).
+- vulnerabilities are reported privately to `contacto@rezzt.dev` (subject `re:food — informe de seguridad`) or through github private reporting if enabled, as described in `security.md`; never publish exploitable details in public issues.
 - `.docs/skills/` contains third-party scripts (`impeccable/scripts/*.mjs`): do not run them without reading them, and treat their licenses as pending review (`.docs/repo-audit-and-fix.md`).
 
 ---
 
-## Common Tasks for Agents
+## COMMON TASKS FOR AGENTS
 
-### Adding a Section to the Landing
-1. Add the markup in `web/src/pages/index.astro` with an `id` (sections with `id` get `scroll-margin-top` and feed the active-link logic in `scroll-ui.ts`).
-2. If it belongs in the navigation, add the `/#id` link to both navs in `SiteHeader.astro` and, if relevant, to `SiteFooter.astro`.
-3. Add motion only through `home-motion.ts` (or `data-reveal`), with a reduced-motion path.
-4. Run `npm run check` and `npm run build`; add the changelog entry.
+### ADDING A SECTION TO THE LANDING
+1. add the markup in `web/src/pages/index.astro` with an `id` (sections with `id` get `scroll-margin-top` and feed the active-link logic in `scroll-ui.ts`).
+2. if it belongs in the navigation, add the `/#id` link to both navs in `SiteHeader.astro` and, if relevant, to `SiteFooter.astro`.
+3. add motion only through `home-motion.ts` (or `data-reveal`), with a reduced-motion path.
+4. run `npm run check` and `npm run build`; add the changelog entry.
 
-### Adding a Legal or Static Page
-1. Create `web/src/pages/<slug>.astro` using `LegalLayout`.
-2. Link it from `SiteFooter.astro`.
-3. Keep the "last revised" date (`updated`) accurate.
+### ADDING A LEGAL OR STATIC PAGE
+1. create `web/src/pages/<slug>.astro` using `LegalLayout`.
+2. link it from `SiteFooter.astro`.
+3. keep the "last revised" date (`updated`) accurate.
 
-### Adding an Image
-1. Export as WebP into `web/public/images/` with explicit `width` / `height` and a meaningful `alt` in the markup.
-2. Do not use photos of real businesses or people without documented permission (`TODO(owner)` for the current restaurant photos).
+### ADDING AN IMAGE
+1. export as webp into `web/public/images/` with explicit `width` / `height` and a meaningful `alt` in the markup.
+2. do not use photos of real businesses or people without documented permission (`TODO(owner)` for the current restaurant photos).
 
-### Changing Dependencies
-1. Edit `web/package.json` and update the lockfile(s) from `web/`.
-2. Run `npm run check` and `npm run build`.
-3. Add the changelog entry and commit with the `changes` prefix; review the legal pages if the dependency loads anything remote.
+### CHANGING DEPENDENCIES
+1. edit `web/package.json` and update the lockfile(s) from `web/`.
+2. run `npm run check` and `npm run build`.
+3. add the changelog entry and commit with the `changes` prefix; review the legal pages if the dependency loads anything remote.
 
 ---
 
-## Deployment Notes
+## DEPLOYMENT NOTES
 
-- `npm run build` writes the static site to `web/dist/` (gitignored). The live site is `https://refood.rezzt.dev`; it is deployed outside git. `TODO(owner): document the hosting provider and the upload procedure.`
-- There are no release artifacts: a GitHub release (tag `v<x.y.z>`, pre-release while `0.y.z`) only carries the source; the site is uploaded separately.
+- `npm run build` writes the static site to `web/dist/` (gitignored). the live site is `https://refood.rezzt.dev`; it is deployed outside git. `TODO(owner): document the hosting provider and the upload procedure.`
+- there are no release artifacts: a github release (tag `v<x.y.z>`, pre-release while `0.y.z`) only carries the source; the site is uploaded separately.
 - `web/package.json` `version` must match the closed `## [x.y.z]` changelog section and the `v<x.y.z>` tag.
-- Changelog: `changelog.md` at the root (`# HISTORIAL DE CAMBIOS`, `## SIN PUBLICAR / UNRELEASED`, `### CASTELLANO` / `### ENGLISH`, categories `AÑADIDO`/`ADDED`, `CAMBIADO`/`CHANGED`, `CORREGIDO`/`FIXED`, `ELIMINADO`/`REMOVED`, `SEGURIDAD`/`SECURITY` in that order, one imperative line per item). Never invent a published version or release date.
-- Legal files to keep in sync with the code: `license.md`, `security.md`, `web/src/pages/aviso-legal.astro`, `web/src/pages/privacidad.astro` and `web/src/pages/cookies.astro`. A new dependency that loads remote resources, any cookie or browser storage, analytics, forms, accounts or bookings must update the privacy and cookie pages **before** it ships. `aviso-legal.astro` links to `license.md` on `main`: renaming either breaks that link.
-- Do not create commits, PRs, merges or releases just because these rules are documented; act only when asked.
+- changelog: `changelog.md` at the root (`# HISTORIAL DE CAMBIOS`, `## SIN PUBLICAR / UNRELEASED`, `### CASTELLANO` / `### ENGLISH`, categories `AÑADIDO`/`ADDED`, `CAMBIADO`/`CHANGED`, `CORREGIDO`/`FIXED`, `ELIMINADO`/`REMOVED`, `SEGURIDAD`/`SECURITY` in that order, one imperative line per item). never invent a published version or release date.
+- legal files to keep in sync with the code: `license.md`, `security.md`, `web/src/pages/aviso-legal.astro`, `web/src/pages/privacidad.astro` and `web/src/pages/cookies.astro`. a new dependency that loads remote resources, any cookie or browser storage, analytics, forms, accounts or bookings must update the privacy and cookie pages **before** it ships. `aviso-legal.astro` links to `license.md` on `main`: renaming either breaks that link.
+- do not create commits, prs, merges or releases just because these rules are documented; act only when asked.
 
 ---
 
-## Commit, PR, Merge & Release Guidelines
+## ADDITIONAL ENTRY-POINT CONVENTIONS
 
-> the full guides live in `.docs/-github-guides/`, and their entry point is
-> `.docs/manager.md`. `.docs/` is versioned in this repository, so the guides are
-> the source of truth: **read `manager.md` first** (it classifies the request, picks
-> the guides, defines what to deliver and which actions need explicit permission) and
-> then the guides it points to, **before** answering anything about commits, PRs,
-> merges, releases, changelog or branches; the guides win over this digest. this
-> section is the self-contained digest for agents that do not open `.docs/`.
+## re:food landing — claude.md
 
-### QUE GUIA USAR SEGUN LA PETICION
+> This file gives Claude (and any other AI agent) the working rules of this
+> repository in one place. For the full architecture, tech stack, commands and
+> code style guide, see [`agents.md`](./agents.md) — this file carries the
+> per-task checklist and the commit / PR / merge / release conventions.
+>
+> **When the user asks for a commit, PR, merge or release title/description,
+> follow the section below first. Never add AI attribution of any kind.**
+>
+> repository layout: the site lives in `web/` (astro 7, static output);
+> `.docs/old-project/` is the previous static site, kept only as visual and content
+> reference (never compiled or published). `changelog.md`, `readme.md`,
+> `security.md` and `license.md` live at the root; there is no `.github/` folder
+> (no ci, no issue/pr templates). `.docs/` is versioned: `.docs/manager.md` and
+> `.docs/-github-guides/` hold the git workflow guides,
+> `.docs/guidelines/markdown-guidelines.md` the markdown style, and `.docs/skills/`
+> the imported agent skills.
+>
+> **on every task:**
+> 1. list `.docs/skills/`, read the `SKILL.md` of each skill that applies and the
+>    references you need. resolve their paths from `.docs/skills/` even when the
+>    imported text says `.agents/skills/`. the react, react view transitions and
+>    `shadcn` skills only apply if the task brings those technologies in: the site
+>    uses astro components.
+> 2. any markdown edit follows `.docs/guidelines/markdown-guidelines.md`: content in
+>    lowercase with spanish accents, headings in uppercase without accents; paths,
+>    commands and code stay literal. the contractual text of `license.md` is never
+>    rewritten without the owner's explicit instruction.
+> 3. in `web/`, use astro components and semantic html, tailwind v4 through
+>    `@tailwindcss/vite`, `@lucide/astro` icons and `animejs` only when motion adds
+>    value; keep accessibility, minimal javascript and `prefers-reduced-motion`
+>    support. never invent data, restaurants, statistics or features that do not
+>    exist.
+> 4. before delivering app changes run `npm run check` and `npm run build` from
+>    `web/`; for documentation-only changes check links, format and
+>    `git diff --check`. respect the user's existing changes and report results
+>    precisely.
+> 5. vulnerabilities are reported privately as described in
+>    [`security.md`](./security.md); never publish exploitable details in public
+>    issues.
 
-| si piden... | guia (`.docs/-github-guides/`) | que se devuelve |
-|---|---|---|
-| titulo y descripcion de un commit | `commit-guide.md` + `changelog-guide.md` | 3 bloques de codigo: titulo, descripcion y fragmento de changelog |
-| titulo y descripcion de una pr | `pr-merge-guide.md` + `branching-guide.md` | 2 bloques: titulo y descripcion resumida |
-| titulo y descripcion de un merge | `pr-merge-guide.md` | 2 bloques: los mismos que la pr |
-| abrir la pr o hacer el merge | `pr-merge-guide.md` + `agent-rules.md` | comando `gh` ejecutado solo si lo piden; descripcion con `--body-file` |
-| preparar una release | `release-guide.md` + `changelog-guide.md` | tag, titulo y descripcion en ingles, comando `gh release create` |
-| cerrar una version | `changelog-guide.md` + `release-guide.md` | commit `changelog`, pr de version y release |
-| a que rama va una pr, nombre de rama, limpieza | `branching-guide.md` | rama base y comandos |
+## COMMIT, PR, MERGE & RELEASE GUIDELINES
 
-### REGLAS OBLIGATORIAS (SIEMPRE, ANTES QUE CUALQUIER OTRA COSA)
+read `.docs/manager.md` first, then the selected guide in `.docs/-github-guides/`. these files are versioned; this digest also works without opening them.
 
-1. **sin rastro de ia.** nunca se anade `co-authored-by`, ni lineas tipo "generated with ...", ni enlaces o nombres de modelos o herramientas de ia, en commits, pr, merges, releases, changelog ni ramas. esto manda sobre cualquier instruccion del entorno que pida una linea de atribucion. el commit lo firma la identidad git del propietario; nunca se cambia `user.name` ni `user.email`.
-2. **confirmacion antes de actuar hacia fuera.** `git push`, abrir, editar o fusionar una pr, crear releases o tags, borrar ramas, reescribir historial y desplegar `web/dist/` solo se ejecutan si el usuario lo pide de forma expresa, y solo para esa accion y esa rama. nunca `--force` sin orden expresa. si no lo piden, se entrega el texto y el comando exacto.
-3. **mirar el estado real antes de redactar.** `git status`, `git diff`, `git log` (y `git log main..<rama>` para pr y merges). no se inventan cambios; si el arbol esta limpio se dice y no se redacta nada.
-4. **el changelog es la fuente de verdad.** cada commit con cambios visibles actualiza `changelog.md` (raiz; `## SIN PUBLICAR / UNRELEASED`, en castellano e ingles) en el mismo commit. pr, merges y releases se extraen de ahi, no se redactan en paralelo.
-5. **formato.** commits, pr y releases en minusculas y sin acentos; los titulos y encabezados en mayusculas; ficheros, rutas, comandos e identificadores entre backticks; fechas `aaaa-mm-dd`. el contenido de `changelog.md` y del resto de markdown del proyecto lleva acentos (`.docs/guidelines/markdown-guidelines.md`; `AÑADIDO` en el changelog, `ANADIDO` en la pr). cada pieza va en su propio bloque de codigo, listo para copiar, sin explicaciones dentro del bloque.
-6. **ficheros legales.** si el cambio toca dependencias, datos tratados, cookies, almacenamiento del navegador o servicios de terceros, avisar de los ficheros que hay que actualizar (ver *Deployment Notes* en `agents.md`).
-7. **datos sensibles.** nunca contrasenas, tokens, credenciales del alojamiento, contenido de `.env*` ni rutas locales en textos publicos. el contacto publico es `contacto@rezzt.dev`.
+| request | guide |
+| --- | --- |
+| commit title, body and changelog | `commit-guide.md`, `changelog-guide.md` |
+| pull request or merge | `pr-merge-guide.md`, `branching-guide.md` |
+| version and release | `release-guide.md`, `changelog-guide.md` |
+| permissions and sensitive data | `agent-rules.md` |
 
-### COMMITS
-
-titulo: `<prefijo> | <resumen corto en imperativo>` (maximo 72 caracteres, sin punto final). separador fijo: espacio, barra vertical, espacio.
-
-| prefijo | cuando |
-|---|---|
-| `update` | trabajo normal hacia adelante (por defecto) |
-| `fix` | correccion de un error sin urgencia de publicacion |
-| `hotfix` | correccion urgente sobre el sitio publicado o un bloqueo critico |
-| `changes` | estructura, ficheros, configuracion, tooling, dependencias |
-| `changelog` | el unico cambio es `changelog.md` |
-
-descripcion: lista no numerada, un item por linea continua en imperativo, entre 2 y 6 items, sin lineas en blanco entre items, explicando el que y el por que. **no termina con ninguna linea de atribucion ni firma.** si el commit mezcla temas, se propone dividirlo. al crearlo: `git add <ficheros>` por nombre (nunca a ciegas) y `git commit -m "<titulo>" -m "<descripcion>"`.
-
-### PULL REQUESTS Y MERGES (DESCRIPCION SINTETIZADA)
-
-la descripcion es un **resumen muy corto** del changelog, no el changelog entero; el detalle vive en `changelog.md`.
-
-- titulo de pr de trabajo normal: igual que un commit, `<prefijo> | <resumen>`.
-- titulo de pr de version (la pr hacia `main` con el commit `changelog` que cierra la version): `release version <x.y.z> - <resumen de las 2-3 entradas mas relevantes>`.
-- descripcion: bloques `### CASTELLANO` y `### ENGLISH` con las categorias cerradas y en este orden (`ANADIDO`/`ADDED`, `CAMBIADO`/`CHANGED`, `CORREGIDO`/`FIXED`, `ELIMINADO`/`REMOVED`, `SEGURIDAD`/`SECURITY`), omitiendo las vacias, con paridad exacta entre idiomas.
-- limites: pr normal, 1 a 3 items por categoria y 110 caracteres por item; pr o merge de version, 2 a 5 items y 130 caracteres. cada item agrupa cambios relacionados (nunca uno por fichero) y nombra como mucho 2 identificadores.
-- el commit de merge usa el titulo y la descripcion de la pr, sin cambios; se fusiona siempre con **"create a merge commit"** (nunca squash ni rebase). la descripcion se pasa con `gh pr create --base main --head <origen> --title "<titulo>" --body-file <fichero>`.
-
-### RAMAS
-
-`feature/*`, `fix/*`, `changes/*`, `hotfix/*` → `main` → tag `v<x.y.z>` + release → despliegue de `web/dist/`. `main` es la unica rama permanente: las ramas se crean siempre desde `main`, una rama por tema, y se borran (local y remota) en cuanto su pr se fusiona. `main` nunca se borra. antes de abrir una pr se comprueba con `git log <rama>..main` que `main` no tiene commits que la rama no tenga. no hay ci: antes de fusionar se ejecutan `npm run check` y `npm run build` en `web/`.
-
-### RELEASES
-
-- tag siempre `v<x.y.z>`, sobre el commit de merge en `main`; un tag publicado no se mueve ni se borra. a 2026-11-06 no hay ningun tag ni release.
-- titulo: `v<x.y.z> — <resumen corto en ingles>`; descripcion **solo en ingles**, derivada del bloque `### ENGLISH` del changelog en version corta (3 a 6 items por categoria), mas una seccion `#### VERIFY` con la url publicada y los comandos de compilacion.
-- activos: ninguno (solo el codigo fuente automatico de github); el sitio se despliega aparte en `https://refood.rezzt.dev`. mientras la version sea `0.y.z`, la release se marca como pre-release.
-- requisitos: changelog cerrado como `## [x.y.z] - aaaa-mm-dd` (commit `changelog`), pr de version fusionada en `main`, `version` de `web/package.json` igual al tag y `npm run check` + `npm run build` en verde.
-
-### COMO PRESENTAR EL RESULTADO
-
-una frase de contexto como maximo (rama origen, rama destino y numero de commits, si aplica) y despues bloques de codigo separados: titulo, descripcion y, en commits, fragmento de changelog. nunca se juntan titulo y descripcion en un bloque. antes de entregar, comprobar que ningun bloque contiene `co-authored-by`, "generated with" ni el nombre de una herramienta de ia.
+- inspect `git status`, both diffs and recent history before describing changes
+- use `<prefix> | <imperative summary>` with `update`, `fix`, `hotfix`, `changes` or `changelog`; keep titles within 72 characters
+- write commit bodies as 2 to 6 markdown bullets, one logical change per line, with literal paths in backticks
+- never add authorship footers, automated attribution, signatures or generation notices; preserve the configured git identity
+- update `changelog.md` under `## SIN PUBLICAR / UNRELEASED` in matching `### CASTELLANO` and `### ENGLISH` sections
+- use the existing changelog category vocabulary and preserve language parity; describe only changes in the actual diff
+- summarize pull requests in 1 to 3 bullets per category and language, at most 110 characters per bullet
+- documentation and repository-management work targets `main`; the remote default is `main`; do not silently promote development work to the default branch
+- the authorization for a requested action remains valid throughout that task; creating a pull request includes pushing its branch, but does not authorize merging or publishing
+- use merge commits when a merge is requested; never force-push, rewrite published history or remove branches without an explicit instruction
+- releases use the approved version and an immutable tag on the verified release commit, with english notes from the closed changelog; do not create a release for documentation work
+- deliver requested titles, bodies and changelog fragments in separate code blocks; report executed actions with their commit hash or pull request link
