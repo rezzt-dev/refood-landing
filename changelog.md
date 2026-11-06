@@ -22,6 +22,7 @@
 #### CAMBIADO
 
 - completar las guías de gestión y el contexto específico del proyecto; conservar las reglas técnicas y verificar las rutas
+- corregir el ejemplo de promociones entre ramas para evitar destinos idénticos al origen
 
 - rehacer `claude.md` y `agents.md` con el mapa real del proyecto y el resumen de las reglas de git y github.
 - renovar el mensaje, la composición visual y la navegación de la portada, con ajustes específicos para móvil.
@@ -64,6 +65,7 @@
 #### CHANGED
 
 - complete repository management guides and project-specific context; preserve technical rules and verify paths
+- correct the branch promotion example to avoid destinations identical to the source
 
 - rewrite `claude.md` and `agents.md` with the real project map and the git and github workflow digest.
 - refresh homepage copy, visual composition and navigation, including mobile refinements.
